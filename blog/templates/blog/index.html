@@ -1,11 +1,24 @@
 {% extends 'main/base.html' %}
 
-{% if latest_posts_list %}
-    <ul>
-        {% for post in latest_post_list %}
-            <li><a href="{% url 'blog:detail' post.id %}">{{ post.post_text }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No posts are available.</p>
-{% endif %}
+{% block title %}Blog Main Page{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if latest_posts %}
+            {% for post in latest_posts %}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.blurb }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <a href="#"></a>
+{#                {{ post.content|safe }}#}
+            {% endfor %}
+        {% else %}
+            <p>No posts are available.</p>
+        {% endif %}
+    </div>
+{% endblock %}
