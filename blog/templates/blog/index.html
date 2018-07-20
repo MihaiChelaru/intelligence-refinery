@@ -11,11 +11,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.blurb }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{% url 'blog:post-detail' post.pk post.slug %}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-                <a href="#"></a>
-{#                {{ post.content|safe }}#}
             {% endfor %}
         {% else %}
             <p>No posts are available.</p>
