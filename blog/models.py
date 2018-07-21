@@ -16,7 +16,7 @@ class Author(models.Model):
         String representation of the author of a post, "first_name last_name".
         :return:
         """
-        return self.first_name + " " + self.last_name
+        return self.first_name, self.last_name
 
 
 class Post(models.Model):
