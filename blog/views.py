@@ -38,7 +38,7 @@ def tag_list(request):
     :param slug: Tag slug.
     :return:
     """
-    tags = Post.objects.all().values_list('tags', flat=True)
+    tags = Post.tags.tag_model.objects.all()
     return render(request, 'blog/tag_list.html', {'tags': tags})
 
 def posts_by_tag(request, slug):
