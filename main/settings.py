@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'markdownx',
+    'tagulous',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ STATICFILES_FINDERS = [
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
+
+FORCE_LOWERCASE_TAGS = True
