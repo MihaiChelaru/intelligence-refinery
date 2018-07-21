@@ -62,6 +62,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'blog/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -137,7 +138,5 @@ STATICFILES_DIRS = (
 )
 
 FORCE_LOWERCASE_TAGS = True
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
