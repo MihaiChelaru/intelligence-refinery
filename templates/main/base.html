@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
+      <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
     <title>{% block title %} Mup and Nan {% endblock %}</title>
 </head>
 <body>
@@ -34,14 +38,11 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Data Science</a>
-                        <a class="dropdown-item" href="#">Job Searching</a>
+                        <a class="dropdown-item" href="{% url 'blog:posts-by-tag' 'data-science' %}">Data Science</a>
+                        <a class="dropdown-item" href="{% url 'blog:posts-by-tag' 'job-searching' %}">Job Searching</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Resources</a>
+                        <a class="dropdown-item" href="{% url 'blog:posts-by-tag' 'resources' %}">Resources</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -54,8 +55,21 @@
 <br>
 
 <!-- Enter individual page content here -->
-<div class="container">
-    {% block content %}{% endblock %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            {% block sidebar %}
+                <ul class="sidebar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'posts' %}">All Posts</a></li>
+                    <li><a href="{% url 'tag-list' %}">Tags</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+        <div class="col-sm-10 ">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
