@@ -1,1 +1,1 @@
-web: gunicorn perennialbeginner.wsgi
+web: gunicorn main.wsgi
