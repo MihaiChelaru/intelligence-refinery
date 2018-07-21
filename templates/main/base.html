@@ -11,11 +11,11 @@
 
       <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static "css/base.css" %}">
 
     <title>{% block title %} Mup and Nan {% endblock %}</title>
 </head>
-<body>
+<body background="{% static "images/background.jpg"%}">
 <div class="container">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="#">Navigation</a>
