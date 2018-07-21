@@ -4,16 +4,12 @@
     list-style: none;
 }
 
-div.a {
-    text-indent: 1in;
-}
-
 body {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-#container {
+.container {
     background: rgb(255,255,255);
     opacity: 0.9;
 }
