@@ -10,6 +10,8 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     bio = models.TextField(max_length=2000, help_text='Author biography')
     email = models.EmailField()
+    github = models.URLField()
+    stack_overflow = models.URLField(null=True, blank=True)
 
     def __str__(self):
         """

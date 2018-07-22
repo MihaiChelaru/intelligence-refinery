@@ -26,10 +26,10 @@ def post_detail(request, post_id, slug):
     post = get_object_or_404(Post, pk=post_id)
     if post.slug != slug:
         return redirect('blog:post-detail', post_id=post.pk, slug=post.slug)
-
+    author = post.author
     # markdownify() content and display on page
     post.content = markdownify(post.content)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    return render(request, 'blog/post_detail.html', {'post': post, 'author': author})
 
 def tag_list(request):
     """
