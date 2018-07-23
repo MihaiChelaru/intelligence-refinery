@@ -13,9 +13,21 @@
     <title>{% block title %} Mup and Nan {% endblock %}</title>
 </head>
 <body background="{% static 'images/background.jpg' %}">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            {% block sidebar %}
+                <ul class="sidebar-nav">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
+                </ul>
+            {% endblock %}
+        </div>
+    </div>
+</div>
 <div class="container">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-{#        <a class="navbar-brand" href="#">Navigation</a>#}
+        {#        <a class="navbar-brand" href="#">Navigation</a>#}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +41,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
                 </li>
-                                <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:posts-by-tag' 'data-science' %}">Data Science</a>
                 </li>
-                                <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:posts-by-tag' 'job-searching' %}">Job Searching</a>
                 </li>
-                                <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:posts-by-tag' 'resources' %}">Resources</a>
                 </li>
             </ul>
@@ -45,18 +57,6 @@
             </form>
         </div>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-2">
-                {% block sidebar %}
-                    <ul class="sidebar-nav">
-                        {% load blog_tagcloud %}
-                        {% tag_cloud %}
-                    </ul>
-                {% endblock %}
-            </div>
-        </div>
-    </div>
     <div class="container">
         {% block content %}{% endblock %}
     </div>
