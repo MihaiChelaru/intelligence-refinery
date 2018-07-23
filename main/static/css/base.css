@@ -7,10 +7,6 @@ header, aside, section, footer {
     display: flex;
 }
 
-header {
-    height: fit-content;
-}
-
 aside {
     flex: 2;
     justify-content: center;
