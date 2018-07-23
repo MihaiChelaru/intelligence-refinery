@@ -3,11 +3,10 @@
 {% block title %}Blog Main Page{% endblock %}
 
 {% block content %}
-    <div class="container">
         {% if posts %}
             {% for post in posts %}
                 <div class="card-deck">
-                <div class="card text-white bg-dark mb-3" style="width: 18rem; padding: 20px">
+                <div class="card text-white bg-dark mb-3" style="width: 18rem;">
 {#                    <img class="card-img-top" src=".../100px180/" alt="Card image cap">#}
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
@@ -20,5 +19,4 @@
         {% else %}
             <p>No posts with this tag.</p>
         {% endif %}
-    </div>
 {% endblock %}

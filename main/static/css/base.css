@@ -3,7 +3,7 @@ body, html {
     margin: 0;
 }
 
-header, aside {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
