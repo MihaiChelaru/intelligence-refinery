@@ -48,8 +48,11 @@
 
 {% block sidebar %}
     <ul class="sidebar">
-        {% load blog_tagcloud %}
-        {% tag_cloud %}
+        <div class="row align-items-center">
+            {% load blog_tagcloud %}
+            {% tag_cloud %}
+        </div>
+
     </ul>
 {% endblock %}
 
