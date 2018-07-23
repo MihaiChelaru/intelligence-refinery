@@ -10,11 +10,17 @@ header, aside {
     min-width: 0;
 }
 
+aside {
+  flex: 2;
+}
+section {
+  flex: 6;
+}
+
 #center-page {
     display: flex;
     height: 90%;
     width: 100%;
-    margin-top: 30px;
     margin-left: 200px;
     margin-right: 200px;
 }
