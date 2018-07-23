@@ -13,7 +13,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ post.title }}</h5>
                                 <p class="card-text">{{ post.blurb }}
-                                    <a href="{% url 'blog:post-detail' post.pk post.slug %}" class="btn btn-primary">Read
+                                    <a id="read-more" href="{% url 'blog:post-detail' post.pk post.slug %}"
+                                       class="btn btn-primary">Read
                                         More</a>
                                 <p class="card-text">
                                     <small class="text-muted">Published on {{ post.publication_date }}</small>
