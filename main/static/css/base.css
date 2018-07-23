@@ -17,11 +17,13 @@ section {
     flex: 7;
 }
 
+#site-container {
+    max-width: 1280px;
+}
+
 #center-page {
     display: flex;
     height: 100%;
-    margin-left: 200px;
-    margin-right: 200px;
     background: rgb(255, 255, 255);
     opacity: 0.9;
 }
