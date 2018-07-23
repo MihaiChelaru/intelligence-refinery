@@ -45,19 +45,18 @@
             </form>
         </div>
     </nav>
-{#    <div class="container-fluid">#}
-{#        <div class="row">#}
-{#            <div class="col-sm-2">#}
-{#                {% block sidebar %}#}
-{#                    <ul class="sidebar-nav">#}
-{#                        <li><a href="{% url 'home' %}">Home</a></li>#}
-{#                        <li><a href="{% url 'blog:posts' %}">All Posts</a></li>#}
-{#                        <li><a href="{% url 'blog:tag-list' %}">Tags</a></li>#}
-{#                    </ul>#}
-{#                {% endblock %}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                {% block sidebar %}
+                    <ul class="sidebar-nav">
+                        {% load blog_tagcloud %}
+                        {% tag_cloud %}
+                    </ul>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
     <div class="container">
         {% block content %}{% endblock %}
     </div>
