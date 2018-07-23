@@ -49,4 +49,4 @@ def posts_by_tag(request, slug):
     :return:
     """
     posts = Post.objects.filter(tags__slug__exact=slug)
-    return render(request, 'blog/posts_by_tag.html', {'posts': posts})
+    return render(request, 'blog/posts_by_tag.html', {'posts': posts, 'slug':slug})
