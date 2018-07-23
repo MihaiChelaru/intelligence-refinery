@@ -1,0 +1,9 @@
+{% if tags %}
+    <h2>Tags</h2>
+    <p>
+    {% for tag in tags %}
+        <a href="{{ tag.get_absolute_url }}" class="tag_{{ tag.weight }}">
+            {{ tag.name }}
+        </a>
+    {% endfor %}
+{% endif %}
