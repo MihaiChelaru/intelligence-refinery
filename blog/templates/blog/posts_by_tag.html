@@ -6,13 +6,15 @@
     <div class="container">
         {% if posts %}
             {% for post in posts %}
-                <div class="card" style="width: 18rem;">
+                <div class="card-deck">
+                <div class="card text-white bg-dark mb-3" style="width: 18rem; padding: 20px">
 {#                    <img class="card-img-top" src=".../100px180/" alt="Card image cap">#}
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.blurb }}</p>
                         <a href="{% url 'blog:post-detail' post.pk post.slug %}" class="btn btn-primary">Read More</a>
                     </div>
+                </div>
                 </div>
             {% endfor %}
         {% else %}
