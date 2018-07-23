@@ -16,16 +16,9 @@ header, aside, section {
 }
 
 .sidebar {
-    height: 100%;
-    width: 160px;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
     background: rgb(255, 255, 255);
     opacity: 0.9;
-    overflow-x: hidden;
-    padding-top: 20px;
 }
 
 .container {
