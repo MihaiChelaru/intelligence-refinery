@@ -2,7 +2,7 @@
     <h2>Tags</h2>
     <p>
     {% for tag in tags %}
-        <a href="{{ tag.get_absolute_url }}" class="tag_{{ tag.weight }}">
+        <a href="{% url 'blog:posts-by-tag' tag.slug %}" class="tag_{{ tag.weight }}">
             {{ tag.name }}
         </a>
     {% endfor %}
