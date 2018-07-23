@@ -12,57 +12,60 @@
 </head>
 
 <body style="background-color: #ecebe8">
-<header>
-    <div class="container">
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div id="site-container" class="container">
+    <header>
+        <div class="container">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:posts-by-tag' 'data-science' %}">Data Science</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:posts-by-tag' 'job-searching' %}">Job Searching</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:posts-by-tag' 'resources' %}">Resources</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:posts-by-tag' 'data-science' %}">Data Science</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:posts-by-tag' 'job-searching' %}">Job Searching</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:posts-by-tag' 'resources' %}">Resources</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search posts"
+                               aria-label="Search">
+                        <button class="btn btn-primary btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="center-page">
+        <section>
+            {% block content %}{% endblock %}
+        </section>
+
+        <aside>
+            {% block sidebar %}
+                <ul class="sidebar">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search posts" aria-label="Search">
-                    <button class="btn btn-primary btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
+            {% endblock %}
+        </aside>
     </div>
-</header>
-
-
-<div id="center-page">
-    <section>
-        {% block content %}{% endblock %}
-    </section>
-
-    <aside>
-        {% block sidebar %}
-            <ul class="sidebar">
-                {% load blog_tagcloud %}
-                {% tag_cloud %}
-            </ul>
-        {% endblock %}
-    </aside>
 </div>
-
 <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
