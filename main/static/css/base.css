@@ -3,7 +3,7 @@ body, html {
     margin: 0;
 }
 
-header, aside, section {
+header, aside {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,6 @@ header, aside, section {
 }
 
 .sidebar {
-    position: fixed;
     background: rgb(255, 255, 255);
     opacity: 0.9;
 }
