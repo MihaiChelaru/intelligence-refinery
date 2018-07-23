@@ -48,23 +48,24 @@
     </nav>
 </header>
 
-<main></main>
 
-<div class="container" style="margin-top:30px; bottom:0">
-    {% block content %}{% endblock %}
+<div id="center-page" class="container" style="margin-top:30px;">
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+
+    <aside>
+        {% block sidebar %}
+            <ul class="sidebar">
+                <div class="row align-items-center">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
+                </div>
+
+            </ul>
+        {% endblock %}
+    </aside>
 </div>
-
-<aside>
-    {% block sidebar %}
-        <ul class="sidebar">
-            <div class="row align-items-center">
-                {% load blog_tagcloud %}
-                {% tag_cloud %}
-            </div>
-
-        </ul>
-    {% endblock %}
-</aside>
 
 
 <!-- Optional JavaScript -->

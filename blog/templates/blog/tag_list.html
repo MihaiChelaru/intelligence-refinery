@@ -3,13 +3,11 @@
 {% block title %}Browse Post Tags{% endblock %}
 
 {% block content %}
-    <div class="container">
-        {% if tags %}
-            {% for tag in tags %}
-                <p><a href="{% url 'blog:posts-by-tag' tag.slug %}">{{ tag.name }}</a></p>
-            {% endfor %}
-        {% else %}
-            <p>No tags found.</p>
-        {% endif %}
-    </div>
+    {% if tags %}
+        {% for tag in tags %}
+            <p><a href="{% url 'blog:posts-by-tag' tag.slug %}">{{ tag.name }}</a></p>
+        {% endfor %}
+    {% else %}
+        <p>No tags found.</p>
+    {% endif %}
 {% endblock %}
