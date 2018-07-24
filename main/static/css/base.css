@@ -17,6 +17,18 @@ section {
     flex: 7;
 }
 
+.card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.card-deck .card {
+    padding-bottom: 50px;
+}
+
 #site-container {
     max-width: 1440px;
 }

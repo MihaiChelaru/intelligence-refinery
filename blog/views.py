@@ -50,3 +50,11 @@ def posts_by_tag(request, slug):
     """
     posts = Post.objects.filter(tags__slug__exact=slug)
     return render(request, 'blog/posts_by_tag.html', {'posts': posts, 'slug':slug})
+
+def resources(request):
+    """
+    View for displaying the main resources page.
+    :param request:
+    :return:
+    """
+    return render(request, 'blog/resources.html')
