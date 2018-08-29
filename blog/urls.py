@@ -10,5 +10,5 @@ urlpatterns = [
     path('tags/', views.tag_list, name='tag-list'),
     path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
     path('resources/', views.resources, name='resources'),
-    path('revealjs/', TemplateView.as_view(template_name="blog:72hr_HR_revealjs.html"), name='revealjs'),
+    path('revealjs/', TemplateView.as_view(template_name='revealjs.html'), name='revealjs'),
 ]
