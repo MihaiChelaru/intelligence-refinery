@@ -33,6 +33,9 @@
                             <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:resources' %}">Resources</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'blog:posts-by-tag' 'data-science' %}">Data Science</a>
                         </li>
                         <li class="nav-item">
@@ -42,8 +45,9 @@
                             <a class="nav-link" href="{% url 'blog:sql-intro' %}">Intro to SQL</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog:resources' %}">Resources</a>
+                            <a class="nav-link" href="#">Portfolio</a>
                         </li>
+
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search posts"
