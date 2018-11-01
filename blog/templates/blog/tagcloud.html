@@ -2,7 +2,7 @@
     <h2>Tags</h2>
     <p>
     {% for tag in tags %}
-        <a class="tag-link" href="{% url 'blog:posts-by-tag' tag.slug %}" class="tag_{{ tag.weight }}">
+        <a class="tag-link tag_{{ tag.weight }}" href="{% url 'blog:posts-by-tag' tag.slug %}">
             {{ tag.name }}
         </a>
     {% endfor %}
