@@ -29,6 +29,10 @@ section {
     flex: 7;
 }
 
+nav {
+    background-color: #e3f2fd;
+}
+
 .card-footer {
     position: absolute;
     bottom: 0;
@@ -39,6 +43,12 @@ section {
 
 .card-deck .card {
     padding-bottom: 50px;
+    min-width: 18rem;
+    max-width: 18rem;
+}
+
+#nav-container {
+    padding: 0;
 }
 
 #site-container {
