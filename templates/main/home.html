@@ -1,14 +1,16 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Welcome!{% endblock %}
+{% block title %}Intelligence Refinery{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="jumbotron text-center">
             <div class="container">
-                <h1 class="display-4">Welcome!</h1>
-                <p class="lead">This site is a collection of useful resources and articles about data science, with a
-                    particular focus on data science tools and methodologies.</p>
+                <h1 class="display-4">Welcome to the Intelligence Refinery!</h1>
+                <p class="lead">Overwhelmed by the number of data science MOOCs and datasets? We have a collection
+                    of course reviews, useful resources, and articles about data science, with the goal of cutting
+                    through the noise and helping other students make the most of their data science education.</p>
+                <a id="learn-more" href="{% url 'blog:resources' %}" class="mt-auto btn btn-dark ">Learn More</a>
             </div>
         </div>
         <div class="container mt-3">
