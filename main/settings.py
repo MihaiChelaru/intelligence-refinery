@@ -27,7 +27,7 @@ SECRET_KEY = 'eqtwpduaszm+f-0kcf@=2^3hc6w^l#6y@fsup2g)h)mi9r$#9)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["perennialbeginner.herokuapp.com"]
+ALLOWED_HOSTS = ["intelligencerefinery.herokuapp.com"]
 
 
 # Application definition
