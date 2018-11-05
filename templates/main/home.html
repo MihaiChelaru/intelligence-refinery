@@ -16,21 +16,28 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="card-deck">
-                    <div class="card text-white bg-primary mb-4">
+                    <div class="card text-white bg-dark mb-4">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Blog Posts</h5>
                             <p class="card-text">All blog posts, sorted in order of recency.</p>
-                            <a id="read-more" href="{% url 'blog:posts' %}" class="mt-auto btn btn-dark ">Read More</a>
+                            <a id="read-more" href="{% url 'blog:posts' %}" class="mt-auto btn btn-dark ">Read Blog Posts</a>
                         </div>
                     </div>
-                    <div class="card text-white bg-info mb-4">
+                    <div class="card text-white bg-secondary mb-4">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Resources</h5>
                             <p class="card-text">A smorgasbord of resources collected over months of seeking out the
                                 best tools for various use cases.
                             </p>
-                            <a id="read-more" href="{% url 'blog:resources' %}" class="mt-auto btn btn-dark ">Read
-                                More</a>
+                            <a id="read-more" href="{% url 'blog:resources' %}" class="mt-auto btn btn-dark ">Browse Resources</a>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-primary mb-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Course Reviews</h5>
+                            <p class="card-text">Online courses reviewed for content, clarity, and many more!
+                            </p>
+                            <a id="read-more" href="{% url 'blog:resources' %}" class="mt-auto btn btn-dark ">Read Reviews</a>
                         </div>
                     </div>
                 </div>
