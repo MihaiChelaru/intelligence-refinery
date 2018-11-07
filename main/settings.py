@@ -150,7 +150,7 @@ FORCE_LOWERCASE_TAGS = True
 django_heroku.settings(locals())
 
 ANYMAIL = {
-    "MAILGUN_API_KEY": "cf17ff040def3cbd8d720d821702d840-4412457b-574ee077",
+    "MAILGUN_API_KEY": "pubkey-f653cc27e99d9a310f0573a0c8cb14a4",
     "MAILGUN_SENDER_DOMAIN": "mg.intelligencerefinery.io"
 }
 
