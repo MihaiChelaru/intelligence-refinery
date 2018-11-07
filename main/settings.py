@@ -147,7 +147,7 @@ STATICFILES_STORAGE = 'main.storage.WhiteNoiseStaticFilesStorage'
 
 FORCE_LOWERCASE_TAGS = True
 
-ANYMAIL = os.environ('ANYMAIL')
+ANYMAIL = os.environ.get('ANYMAIL')
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
