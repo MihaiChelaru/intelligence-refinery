@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'markdownx',
     'tagulous',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,11 @@ WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
 FORCE_LOWERCASE_TAGS = True
 
 django_heroku.settings(locals())
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": "cf17ff040def3cbd8d720d821702d840-4412457b-574ee077",
+    "MAILGUN_SENDER_DOMAIN": "mg.intelligencerefinery.io"
+}
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
