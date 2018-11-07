@@ -29,6 +29,8 @@ DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ["*"]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
@@ -147,8 +149,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 FORCE_LOWERCASE_TAGS = True
 
-django_heroku.settings(locals())
-
 ANYMAIL = {
     "MAILGUN_API_KEY": "pubkey-f653cc27e99d9a310f0573a0c8cb14a4",
     "MAILGUN_SENDER_DOMAIN": "mg.intelligencerefinery.io"
@@ -156,3 +156,5 @@ ANYMAIL = {
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
+
+django_heroku.settings(locals())
