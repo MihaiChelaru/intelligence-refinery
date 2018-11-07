@@ -25,7 +25,19 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "qfk2+_!0z84(__3&ca932f0^l@^huof%mpx&4
 DEBUG = os.environ.get('DEBUG', False)
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['intelligencerefinery.herokuapp.com', 'www.intelligencerefinery.io']
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -79,12 +91,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -149,6 +156,3 @@ DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
 
 # django_heroku.settings(locals())
 
-import dj_database_url
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
