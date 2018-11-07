@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ["www.intelligencerefinery.io", "intelligencerefinery.herokuapp.com"]
+ALLOWED_HOSTS = ["www.intelligencerefinery.io"]
 
 
 # Application definition
@@ -143,7 +143,7 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # for /static/root/favicon.ico
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
+#WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
 
 FORCE_LOWERCASE_TAGS = True
 
