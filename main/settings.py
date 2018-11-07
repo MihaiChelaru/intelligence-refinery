@@ -147,10 +147,7 @@ STATICFILES_STORAGE = 'main.storage.WhiteNoiseStaticFilesStorage'
 
 FORCE_LOWERCASE_TAGS = True
 
-ANYMAIL = {
-    "MAILGUN_API_KEY": "pubkey-f653cc27e99d9a310f0573a0c8cb14a4",
-    "MAILGUN_SENDER_DOMAIN": "mg.intelligencerefinery.io"
-}
+ANYMAIL = os.environ('ANYMAIL')
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
