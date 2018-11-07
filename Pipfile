@@ -11,6 +11,7 @@ whitenoise = "*"
 django-markdownx = "*"
 django-heroku = "*"
 django-tagulous = "*"
+django-anymail = {extras = ["mailgun"], version = "*"}
 
 [requires]
 python_version = "3.6"
