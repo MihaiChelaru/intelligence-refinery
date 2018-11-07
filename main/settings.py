@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "qfk2+_!0z84(__3&ca932f0^l@^huof%mpx&4
 DEBUG = os.environ.get('DEBUG', False)
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', '.intelligencerefinery.io']
+ALLOWED_HOSTS = ['intelligencerefinery.herokuapp.com', 'www.intelligencerefinery.io']
 
 # Application definition
 
