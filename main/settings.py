@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -26,7 +25,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "qfk2+_!0z84(__3&ca932f0^l@^huof%mpx&4
 DEBUG = os.environ.get('DEBUG', False)
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost',
+                 '.intelligencerefinery.io'
+                 ]
 
 # Application definition
 
@@ -77,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -87,7 +87,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -107,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -120,7 +118,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -140,7 +137,7 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'main.storage.WhiteNoiseStaticFilesStorage'
 # for /static/root/favicon.ico
-#WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
 
 FORCE_LOWERCASE_TAGS = True
 
@@ -152,7 +149,7 @@ ANYMAIL = {
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "contact@intelligencerefinery.io"
 
-#django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 import dj_database_url
 
