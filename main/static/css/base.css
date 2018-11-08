@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body, html {
@@ -22,18 +22,15 @@ body {
     background-attachment: fixed;
 }
 
-header, aside, section, footer {
-    display: flex;
-}
-
 aside {
-    flex: 2;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
 section {
     flex: 8;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
 }
 
 nav {
@@ -116,4 +113,50 @@ nav {
 
 .tag_6 {
     font-size: 16px;
+}
+
+.wrapper {
+    box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.5);
+    overflow: auto;
+}
+
+.wrapper > * {
+    padding: 1em 1em 1em 2em;
+}
+
+/* FORM STYLES */
+.contact form label, .contact form h2 {
+    display: block;
+    padding-top: 1em;
+    padding-bottom: 0;
+}
+
+.contact form p {
+    margin: 0;
+}
+
+.contact form button, .contact form input, .contact form textarea {
+    max-width: 1000px;
+    padding: 1em;
+    border: 1px solid #92bde7;
+}
+
+.contact form button {
+    text-transform: uppercase;
+}
+
+.contact form button:hover, .contact form button:focus {
+    background: #92bde7;
+    color: #fff;
+    outline: 0;
+    transition: background-color 1s ease-out;
+}
+
+@media only screen and (min-width: 992px) {
+    aside {
+        display: flex;
+        flex: 2;
+        justify-content: center;
+        align-items: center;
+    }
 }

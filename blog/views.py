@@ -68,17 +68,17 @@ def contact(request):
     :param request:
     :return:
     """
-    if request.method == 'GET':
-        form = ContactForm()
-    else:
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
+            email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             try:
                 send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['admin@intelligencerefinery.io'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('blog:success')
+    else:
+        form = ContactForm()
     return render(request, 'blog/contact.html', {'form':form})
