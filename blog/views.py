@@ -71,9 +71,10 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
+            name = form.cleaned_data['name']
             email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
+            subject = form.cleaned_data['subject']
+            message =  f"Sent by: {name} <{email}>\n\n" + form.cleaned_data['message']
             try:
                 send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['admin@intelligencerefinery.io'])
             except BadHeaderError:
