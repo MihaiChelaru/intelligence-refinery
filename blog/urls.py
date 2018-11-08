@@ -12,8 +12,10 @@ urlpatterns = [
     path('resources/', views.resources, name='resources'),
     path('contact/', views.contact, name='contact'),
     path('success/', TemplateView.as_view(template_name='blog/success.html'), name='success'),
-    path('course_reviews/', TemplateView.as_view(template_name='blog/course_reviews.html'), name='course-reviews'),
+    path('course-reviews/', TemplateView.as_view(template_name='blog/course_reviews.html'), name='course-reviews'),
     path('portfolio/', TemplateView.as_view(template_name='blog/portfolio.html'), name='portfolio'),
     path('revealjs/', TemplateView.as_view(template_name='blog/revealjs.html'), name='revealjs'),
-    path('sql_intro/', TemplateView.as_view(template_name='blog/intro_to_sql.html'), name='sql-intro'),
+    path('sql-intro/', TemplateView.as_view(template_name='blog/intro_to_sql.html'), name='sql-intro'),
+    path('portfolio/cannabis-eda/', TemplateView.as_view(template_name='blog/cannabis_strains_EDA.html'), name='cannabis-eda'),
+    path('portfolio/telco-churn/', TemplateView.as_view(template_name='blog/telco_churn.html'), name='telco-churn'),
 ]
