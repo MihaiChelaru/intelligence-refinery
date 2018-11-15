@@ -18,6 +18,7 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 from main import views
 
@@ -26,4 +27,10 @@ urlpatterns = [
     path('admin/', admin.site.urls, {}),
     path('', views.home, name='home'),
     url(r'^markdownx/', include('markdownx.urls')),
+    path('contact/', views.contact, name='contact'),
+    path('success/', TemplateView.as_view(template_name='main/success.html'), name='success'),
+    path('portfolio/', TemplateView.as_view(template_name='main/portfolio.html'), name='portfolio'),
+    path('resources/', TemplateView.as_view(template_name='main/resources.html'), name='resources'),
+    path('portfolio/cannabis-eda/', TemplateView.as_view(template_name='main/cannabis_strains_EDA.html'), name='cannabis-eda'),
+    path('portfolio/telco-churn/', TemplateView.as_view(template_name='main/telco_churn.html'), name='telco-churn'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

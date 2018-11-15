@@ -1,10 +1,7 @@
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from markdownx.utils import markdownify
 
-from .forms import ContactForm
 from .models import Post
 
 
@@ -53,33 +50,3 @@ def posts_by_tag(request, slug):
     """
     posts = Post.objects.filter(tags__slug__exact=slug)
     return render(request, 'blog/posts_by_tag.html', {'posts': posts, 'slug':slug})
-
-def resources(request):
-    """
-    View for displaying the main resources page.
-    :param request:
-    :return:
-    """
-    return render(request, 'blog/resources.html')
-
-def contact(request):
-    """
-    View for displaying the contact form page.
-    :param request:
-    :return:
-    """
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message =  f"Sent by: {name} <{email}>\n\n" + form.cleaned_data['message']
-            try:
-                send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['admin@intelligencerefinery.io'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect('blog:success')
-    else:
-        form = ContactForm()
-    return render(request, 'blog/contact.html', {'form':form})
