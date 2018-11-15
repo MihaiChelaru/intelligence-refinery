@@ -24,6 +24,7 @@ from main import views
 
 urlpatterns = [
     path('blog/', include('blog.urls')),
+    path('reviews/', include('reviews.urls')),
     path('admin/', admin.site.urls, {}),
     path('', views.home, name='home'),
     url(r'^markdownx/', include('markdownx.urls')),
