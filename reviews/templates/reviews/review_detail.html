@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+
+{% block title %}Review | {{ review.resource_name }}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h2>{{ review.resource_name }}</h2>
+        <p>{{ review.last_updated }}</p>
+        {% load static %}
+        <p>
+            By {{ author.first_name }} {{ author.last_name }}
+            <a href="{{ author.github }}"><img src="{% static 'images/GitHub-Mark-32px.png' %}"
+                                               title="{{ author.first_name }}'s GitHub" alt="GitHub"></a>
+            {% if author.stack_overflow %}
+                <a href="{{ author.stack_overflow }}"><img src="{% static 'images/so-icon.png' %}" style="width:32px; height:32px"
+                                                           title="{{ author.first_name }}'s Stack Overflow"
+                                                           alt="Stack Overflow"></a>
+            {% endif %}
+        </p>
+        {% for tag in review.tags.all %}
+            <a id="tag-link" href="{% url 'reviews:reviews-by-tag' tag.slug %}">#{{ tag.name }}</a>
+        {% endfor %}
+        <hr>
+        {{ review.content|safe }}
+    </div>
+    <br>
+
+{% endblock %}

@@ -5,5 +5,5 @@ register = template.Library()
 
 @register.inclusion_tag('blog/tagcloud.html')
 def tag_cloud():
-    tags = models.Post.tags.tag_model.objects.weight()
+    tags = models.Tags.weight()
     return {'tags': tags}

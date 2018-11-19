@@ -1,8 +1,14 @@
+import tagulous.models
 from django.db import models
 from django.urls import reverse
 from markdownx.models import MarkdownxField
-from tagulous.models import TagField
 
+
+# Site tags model
+class Tags(tagulous.models.TagModel):
+    class TagMeta:
+        #Tag options
+        force_lowercase = False
 
 # Models for blog app
 class Author(models.Model):
@@ -28,7 +34,7 @@ class Post(models.Model):
     blurb = models.TextField(max_length=200, help_text='Short blurb summarizing article for list view')
     content = MarkdownxField()
     publication_date = models.DateField()
-    tags = TagField()
+    tags = tagulous.models.TagField(to=Tags)
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
