@@ -1,6 +1,6 @@
+from blog.models import Author, SiteTags
 from django.db import models
 from django.urls import reverse
-from intelligencerefinery.blog.models import Author, Tags
 from markdownx.models import MarkdownxField
 from tagulous.models import TagField
 
@@ -22,7 +22,7 @@ class Review(models.Model):
     blurb = models.TextField(max_length=200, help_text='Short blurb summarizing review for list view')
     content = MarkdownxField()
     last_updated = models.DateField()
-    tags = TagField(to=Tags)
+    tags = TagField(to=SiteTags)
     resource_type = models.ForeignKey(Resource, on_delete=models.SET_NULL, null=True)
 
     def get_absolute_url(self):

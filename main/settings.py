@@ -32,8 +32,8 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -42,11 +42,11 @@ ALLOWED_HOSTS = ['.herokuapp.com', '.intelligencerefinery.io', '127.0.0.1', 'loc
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.contenttypes',
     'blog.apps.BlogConfig',
     'reviews.apps.ReviewConfig',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -73,6 +73,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'blog', 'templates'),
+            os.path.join(BASE_DIR, 'reviews', 'templates'),
             os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
