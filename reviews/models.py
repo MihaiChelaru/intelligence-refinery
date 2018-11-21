@@ -11,6 +11,13 @@ class Resource(models.Model):
     """
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        """
+        String representation of the Resource, i.e. its name for admin purposes.
+        :return:
+        """
+        return self.name
+
 
 class Review(models.Model):
     resource_name = models.CharField(max_length=100)
