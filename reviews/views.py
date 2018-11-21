@@ -17,9 +17,10 @@ def review_detail(request, review_id, slug):
     if review.slug != slug:
         return redirect('reviews:review-detail', post_id=review.pk, slug=review.slug)
     author = review.review_author
+    resource_type = review.resource_type
     # markdownify() content and display on page
     review.content = markdownify(review.content)
-    return render(request, 'blog/post_detail.html', {'post': review, 'author': author})
+    return render(request, 'reviews/review_detail.html', {'review': review, 'author': author, 'resource_type': resource_type})
 
 def reviews_by_tag(request, slug):
     """

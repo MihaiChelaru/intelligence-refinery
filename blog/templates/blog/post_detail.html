@@ -9,12 +9,10 @@
         {% load static %}
         <p>
             By {{ author.first_name }} {{ author.last_name }}
-            <a href="{{ author.github }}"><img src="{% static 'images/GitHub-Mark-32px.png' %}"
-                                               title="{{ author.first_name }}'s GitHub" alt="GitHub"></a>
+            <a href="{{ author.github }}"><i class="fab fa-github-square fa-lg"></i></a>
+
             {% if author.stack_overflow %}
-                <a href="{{ author.stack_overflow }}"><img src="{% static 'images/so-icon.png' %}" style="width:32px; height:32px"
-                                                           title="{{ author.first_name }}'s Stack Overflow"
-                                                           alt="Stack Overflow"></a>
+                <a href="{{ author.stack_overflow }}"><i class="fab fa-stack-overflow fa-lg"></i></a>
             {% endif %}
         </p>
         {% for tag in post.tags.all %}

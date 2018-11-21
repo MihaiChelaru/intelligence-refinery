@@ -6,9 +6,13 @@
 }
 
 body, html {
-    height: calc(100% - 2em);
+    height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: #b7defa;
 }
 
 body {
@@ -20,6 +24,9 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfe2f5', endColorstr='#ba81eb', GradientType=1); /* IE6-9 fallback on horizontal gradient */
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
 }
 
 aside {
@@ -33,7 +40,11 @@ section {
     overflow: hidden;
 }
 
-nav {
+footer {
+    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: #b7defa;
 }
 

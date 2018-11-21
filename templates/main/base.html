@@ -18,6 +18,10 @@
     <meta name="msapplication-config" content="{% static 'favicon/browserconfig.xml' %}">
     <meta name="theme-color" content="#25e2f3">
 
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+            integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+            crossorigin="anonymous"></script>
+
 
     <title>{% block title %} Intelligence Refinery {% endblock %}</title>
 </head>
@@ -80,7 +84,15 @@
             {% endblock %}
         </aside>
     </div>
+
+
+    <footer>
+        <p>Written in Django and powered by Heroku</p>
+        <p>© 2018 Intelligence Refinery</p>
+    </footer>
 </div>
+
+
 <script src="{% static 'js/highlight.pack.js' %}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
