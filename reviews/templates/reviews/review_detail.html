@@ -6,7 +6,7 @@
     <div class="content">
         <h2><a href="{{ review.url }}">{{ review.resource_name }}</a></h2>
         <p>Last updated: {{ review.last_updated }}</p>
-        <p>{{ resource_type.name }} author: {{ review.resource_author }}</p>
+        <p>{{ resource_type.name }} by {{ review.resource_author }}</p>
         {% load static %}
         <p>
             Reviewed by {{ author.first_name }} {{ author.last_name }}
