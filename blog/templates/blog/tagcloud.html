@@ -1,8 +1,9 @@
 {% if tags %}
+    {% load blog_tagcloud %}
     <h2 id="tag-header">Site Tags</h2>
     <p>
     {% for tag in tags %}
-        <a class="tag-link tag_{{ tag.weight }}" href="{% url 'posts-by-tag' tag.slug %}">
+        <a class="tag-link tag_{{ tag.weight|to_int }}" href="{% url 'posts-by-tag' tag.slug %}">
             {{ tag.name }}
         </a>
     {% endfor %}

@@ -7,3 +7,7 @@ register = template.Library()
 def tag_cloud():
     tags = models.SiteTags.objects.weight()
     return {'tags': tags}
+
+@register.filter()
+def to_int(value):
+    return int(value)

@@ -16,7 +16,7 @@
             {% endif %}
         </p>
         {% for tag in post.tags.all %}
-            <a id="tag-link" href="{% url 'posts-by-tag' tag.slug %}">#{{ tag.name }}</a>
+            <a class="tag-link" href="{% url 'posts-by-tag' tag.slug %}">#{{ tag.name }}</a>
         {% endfor %}
         <hr>
         {{ post.content|safe }}

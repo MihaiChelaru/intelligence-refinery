@@ -7,21 +7,23 @@
         <h2>Blog posts tagged #{{ slug }}</h2>
         <div class="container mt-3">
             <div class="row">
-                <div class="card-deck">
-                    {% for post in blog_posts %}
-                        <div class="card border-primary mb-4">
-                            {#<img class="card-img-top" src="https://placehold.it/280x140/abc" alt="Card image cap">#}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.blurb }}
-                                    <a href="{% url 'blog:post-detail' post.pk post.slug %}" class="btn btn-primary">Read
-                                        More</a>
-                                <p class="card-text">
-                                    <small class="text-muted">Published on {{ post.publication_date }}</small>
-                                </p>
+                <div class="card-deck-wrapper">
+                    <div class="card-deck">
+                        {% for post in blog_posts %}
+                            <div class="card border-primary mb-4">
+                                {#<img class="card-img-top" src="https://placehold.it/280x140/abc" alt="Card image cap">#}
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-text">{{ post.blurb }}</p>
+                                    <a href="{% url 'blog:post-detail' post.pk post.slug %}"
+                                       class="btn btn-primary">Read More</a>
+                                    <div class="card-footer text-muted">
+                                        <small>Published on {{ post.publication_date }}</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,22 +36,23 @@
         <h2>Reviews tagged #{{ slug }}</h2>
         <div class="container mt-3">
             <div class="row">
-                <div class="card-deck">
-                    {% for review in reviews %}
-                        <div class="card border-primary mb-4">
-                            {#<img class="card-img-top" src="https://placehold.it/280x140/abc" alt="Card image cap">#}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ review.resource_name }}</h5>
-                                <p class="card-text">{{ review.blurb }}
+                <div class="card-deck-wrapper">
+                    <div class="card-deck">
+                        {% for review in reviews %}
+                            <div class="card border-primary mb-4">
+                                {#<img class="card-img-top" src="https://placehold.it/280x140/abc" alt="Card image cap">#}
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">{{ review.resource_name }}</h5>
+                                    <p class="card-text">{{ review.blurb }}</p>
                                     <a href="{% url 'reviews:review-detail' review.pk review.slug %}"
-                                       class="btn btn-primary">Read
-                                        More</a>
-                                <p class="card-text">
-                                    <small class="text-muted">Published on {{ review.last_updated }}</small>
-                                </p>
+                                       class="btn btn-primary">Read More</a>
+                                    <div class="card-footer text-muted">
+                                        <small>Last updated on {{ review.last_updated }}</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

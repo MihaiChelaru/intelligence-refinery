@@ -5,8 +5,6 @@ from . import views
 
 app_name = 'blog'
 
-#TODO: refactor posts-by-tag as a site-wide view that displays color-coded cards that link to blog posts or reviews
-
 urlpatterns = [
     path('', views.post_list, name='posts'),
     path('post/<int:post_id>/<slug:slug>/', views.post_detail, name='post-detail'),
