@@ -30,23 +30,3 @@ def post_detail(request, post_id, slug):
     # markdownify() content and display on page
     post.content = markdownify(post.content)
     return render(request, 'blog/post_detail.html', {'post': post, 'author': author})
-
-def tag_list(request):
-    """
-    View function for viewing a list of links to all tags from all posts.
-    :param request:
-    :param slug: Tag slug.
-    :return:
-    """
-    tags = Post.tags.tag_model.objects.all()
-    return render(request, 'blog/tag_list.html', {'tags': tags})
-
-def posts_by_tag(request, slug):
-    """
-    View for displaying all posts with a given tag.
-    :param request:
-    :param slug:
-    :return:
-    """
-    posts = Post.objects.filter(tags__slug__exact=slug)
-    return render(request, 'blog/posts_by_tag.html', {'posts': posts, 'slug':slug})

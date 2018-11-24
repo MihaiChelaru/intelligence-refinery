@@ -5,7 +5,7 @@
 {% block content %}
     {% if tags %}
         {% for tag in tags %}
-            <p><a class="tag-link" href="{% url 'blog:posts-by-tag' tag.slug %}">{{ tag.name }}</a></p>
+            <p><a class="tag-link" href="{% url 'posts-by-tag' tag.slug %}">{{ tag.name }}</a></p>
         {% endfor %}
     {% else %}
         <p>No tags found.</p>

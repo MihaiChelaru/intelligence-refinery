@@ -34,4 +34,6 @@ urlpatterns = [
     path('resources/', TemplateView.as_view(template_name='main/resources.html'), name='resources'),
     path('portfolio/cannabis-eda/', TemplateView.as_view(template_name='main/cannabis_strains_EDA.html'), name='cannabis-eda'),
     path('portfolio/telco-churn/', TemplateView.as_view(template_name='main/telco_churn.html'), name='telco-churn'),
+    path('tags/', views.tag_list, name='tag-list'),
+    path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -16,7 +16,7 @@
             {% endif %}
         </p>
         {% for tag in review.tags.all %}
-            <a id="tag-link" href="{% url 'reviews:reviews-by-tag' tag.slug %}">#{{ tag.name }}</a>
+            <a id="tag-link" href="{% url 'posts-by-tag' tag.slug %}">#{{ tag.name }}</a>
         {% endfor %}
         <hr>
         {{ review.content|safe }}

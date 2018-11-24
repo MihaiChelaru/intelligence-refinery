@@ -21,13 +21,3 @@ def review_detail(request, review_id, slug):
     # markdownify() content and display on page
     review.content = markdownify(review.content)
     return render(request, 'reviews/review_detail.html', {'review': review, 'author': author, 'resource_type': resource_type})
-
-def reviews_by_tag(request, slug):
-    """
-    View for displaying all posts with a given tag.
-    :param request:
-    :param slug:
-    :return:
-    """
-    reviews = Review.objects.filter(tags__slug__exact=slug)
-    return render(request, 'reviews/reviews_by_tag.html', {'reviews': reviews, 'slug':slug})
