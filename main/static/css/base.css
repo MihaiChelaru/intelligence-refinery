@@ -96,8 +96,15 @@ footer {
     text-align: center;
 }
 
+.tagcloud {
+    display: inline-block;
+}
+
+.tagcloud > * {
+    display: inline-block;
+}
+
 .tag-link {
-    box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
     font-weight: bold;
