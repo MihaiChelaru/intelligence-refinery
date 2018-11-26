@@ -11,37 +11,31 @@
         <div class="course-list">
             <h2>Machine Learning</h2>
             <hr>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/2/fastai-machine-learning/">FastAI: Introduction to Machine Learning for Coders</a>
-            </ul>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/1/machine-learning-a-z/">Machine Learning A-Z™: Hands-On Python & R In Data
-                    Science</a>
-            </ul>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/4/statistical-learning/">Stanford
-                    Statistical Learning</a>
-            </ul>
+            {% if ml_courses %}
+                {% for ml_course in ml_courses %}
+                    <ul>
+                        <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
+                    </ul>
+                {% endfor %}
+            {% endif %}
             <h2>Data Science</h2>
             <hr>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/6/data-science-a-z/">Data Science A-Z™: Real-Life Data Science Exercises
-                    Included</a>
-            </ul>
+            {% if ds_courses %}
+                {% for ds_course in ds_courses %}
+                    <ul>
+                        <a href="{% url 'reviews:review-detail' ds_course.pk ds_course.slug %}">{{ ds_course.resource_name }}</a>
+                    </ul>
+                {% endfor %}
+            {% endif %}
             <h2>Programming</h2>
             <hr>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/8/java-programming-masterclass/">Java Programming Masterclass for Software Developers</a>
-            </ul>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/3/udacity-cs101-intro-programming/">Udacity CS101: Intro to Programming</a>
-            </ul>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/5/harvard-cs50/">Harvard CS50</a>
-            </ul>
-            <ul>
-                <a href="https://www.intelligencerefinery.io/reviews/7/mitx-intro-computer-science/">MITx 6.00.1x: Introduction to Computer Science and Programming Using Python</a>
-            </ul>
+            {% if cs_courses %}
+                {% for cs_course in cs_courses %}
+                    <ul>
+                        <a href="{% url 'reviews:review-detail' cs_course.pk cs_course.slug %}">{{ cs_course.resource_name }}</a>
+                    </ul>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 

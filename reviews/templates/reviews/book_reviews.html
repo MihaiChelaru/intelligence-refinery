@@ -13,9 +13,9 @@
             <h2>Machine Learning</h2>
             <hr>
             {% if ml_books %}
-                {% for book in ml_books %}
+                {% for ml_book in ml_books %}
                 <ul>
-                    <a href="{% url 'reviews:review-detail' book.pk book.slug %}">{{ book.resource_name }}</a>
+                    <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
                 </ul>
                 {% endfor %}
             {% endif %}

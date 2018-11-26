@@ -29,3 +29,14 @@ def book_list(request):
     """
     ml_books = Review.objects.filter(resource_type__name__exact="Book", tags="machine-learning")
     return render(request, 'reviews/book_reviews.html', {"ml_books": ml_books})
+
+
+def course_list(request):
+    """
+    View function for viewing book reviews by category.
+    """
+    ml_courses = Review.objects.filter(resource_type__name__contains="Course", tags="machine-learning")
+    ds_courses = Review.objects.filter(resource_type__name__contains="Course", tags="data-science")
+    cs_courses = Review.objects.filter(resource_type__name__contains="Course", tags="programming")
+    return render(request, 'reviews/course_reviews.html', {"ml_courses": ml_courses, 'ds_courses': ds_courses,
+                                                         'cs_courses': cs_courses})
