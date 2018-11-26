@@ -10,21 +10,15 @@
         </div>
 
         <div class="book-list">
-            <h2>Textbooks</h2>
+            <h2>Machine Learning</h2>
             <hr>
-            <ul>
-                <a href="#"></a>
-            </ul>
-            <h2>Manuals</h2>
-            <hr>
-            <ul>
-                <a href="#"></a>
-            </ul>
-            <h2>Non-fiction</h2>
-            <hr>
-            <ul>
-                <a href="#"></a>
-            </ul>
+            {% if ml_books %}
+                {% for book in ml_books %}
+                <ul>
+                    <a href="{% url 'reviews:review-detail' book.pk book.slug %}">{{ book.resource_name }}</a>
+                </ul>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 

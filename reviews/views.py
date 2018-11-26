@@ -21,3 +21,12 @@ def review_detail(request, review_id, slug):
     # markdownify() content and display on page
     review.content = markdownify(review.content)
     return render(request, 'reviews/review_detail.html', {'review': review, 'author': author, 'resource_type': resource_type})
+
+
+def book_list(request):
+    """
+    View function for viewing book reviews by category.
+    """
+    books = Review.objects.filter(resource_type__name__exact="Book")
+    ml_books = books.objects.filter(tags="machine-learning")
+    return render(request, 'reviews/book_reviews.html', {"ml_books": ml_books})
