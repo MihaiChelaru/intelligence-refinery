@@ -27,6 +27,5 @@ def book_list(request):
     """
     View function for viewing book reviews by category.
     """
-    books = Review.objects.filter(resource_type__name__exact="Book")
-    ml_books = books.objects.filter(tags="machine-learning")
+    ml_books = Review.objects.filter(resource_type__name__exact="Book", tags="machine-learning")
     return render(request, 'reviews/book_reviews.html', {"ml_books": ml_books})
