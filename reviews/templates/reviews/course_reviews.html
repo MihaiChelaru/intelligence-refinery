@@ -18,15 +18,6 @@
                     </ul>
                 {% endfor %}
             {% endif %}
-            <h2>Data Science</h2>
-            <hr>
-            {% if ds_courses %}
-                {% for ds_course in ds_courses %}
-                    <ul>
-                        <a href="{% url 'reviews:review-detail' ds_course.pk ds_course.slug %}">{{ ds_course.resource_name }}</a>
-                    </ul>
-                {% endfor %}
-            {% endif %}
             <h2>Programming</h2>
             <hr>
             {% if cs_courses %}
