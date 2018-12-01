@@ -9,26 +9,28 @@
         </div>
 
         <div class="course-list">
-            <h2>Machine Learning</h2>
-            <hr>
-            <div class="review-tags">
+            {% if ml_courses %}
+                <h2>Machine Learning</h2>
+                <hr>
                 <ul>
-                    {% if ml_courses %}
-                        {% for ml_course in ml_courses %}
-                            <li>
-                                <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
-                            </li>
-
-                            {% for tag in ml_course.tags.all %}
-                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
+                    {% for ml_course in ml_courses %}
+                        <li>
+                            <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
+                        </li>
+                        <div class="review-tags">
+                            <ul>
+                                {% for tag in ml_course.tags.all %}
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
                 </ul>
-            </div>
-            <h2>Programming</h2>
-            <hr>
+            {% endif %}
+
             {% if cs_courses %}
+                <h2>Programming</h2>
+                <hr>
                 {% for cs_course in cs_courses %}
                     <ul>
                         <a href="{% url 'reviews:review-detail' cs_course.pk cs_course.slug %}">{{ cs_course.resource_name }}</a>
