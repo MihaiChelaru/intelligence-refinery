@@ -19,7 +19,7 @@
 
                     <div class="review-tags">
                         <ul>
-                            {% for tag in ml_course.tags %}
+                            {% for tag in ml_course.tags.all %}
                                 <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
                             {% endfor %}
                         </ul>
@@ -36,7 +36,7 @@
                     </ul>
                     <div class="review-tags">
                         <ul>
-                            {% for tag in cs_course.tags %}
+                            {% for tag in cs_course.tags.all %}
                                 <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
                             {% endfor %}
                         </ul>
