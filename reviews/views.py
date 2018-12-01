@@ -38,3 +38,11 @@ def course_list(request):
     ml_courses = Review.objects.filter(resource_type__name__contains="Course", tags="machine-learning")
     cs_courses = Review.objects.filter(resource_type__name__contains="Course", tags="programming")
     return render(request, 'reviews/course_reviews.html', {"ml_courses": ml_courses, 'cs_courses': cs_courses})
+
+
+def software_list(request):
+    """
+    View function for viewing book reviews by category.
+    """
+    ides = Review.objects.filter(resource_type__name__exact="Software", tags="ide")
+    return render(request, 'reviews/software_reviews.html', {"ides": ides})

@@ -5,8 +5,9 @@
         <div class="jumbotron">
             <h1 class="display-4">Book Reviews</h1>
             <p class="lead">A list of books related to machine learning, data science, and programming, either academic,
-            such as textbooks or guides, or fun and thought-provoking non-fiction about big data and 21st century data
-            mining.</p>
+                such as textbooks or guides, or fun and thought-provoking non-fiction about big data and 21st century
+                data
+                mining.</p>
         </div>
 
         <div class="book-list">
@@ -14,9 +15,17 @@
             <hr>
             {% if ml_books %}
                 {% for ml_book in ml_books %}
-                <ul>
-                    <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
-                </ul>
+                    <ul>
+                        <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
+                    </ul>
+
+                    <div class="review-tags">
+                        <ul>
+                            {% for tag in ml_book.tags.all %}
+                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endfor %}
             {% endif %}
         </div>

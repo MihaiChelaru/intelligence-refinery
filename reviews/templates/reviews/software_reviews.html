@@ -11,9 +11,22 @@
         <div class="software-list">
             <h2>IDEs</h2>
             <hr>
-            <ul>
-                <a href="#"></a>
-            </ul>
+            {% if ides %}
+                {% for ide in ides %}
+                    <ul>
+                        <a href="{% url 'reviews:review-detail' ide.pk ide.slug %}">{{ ide.resource_name }}</a>
+                    </ul>
+
+                    <div class="review-tags">
+                        <ul>
+                            {% for tag in ide.tags.all %}
+                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 
