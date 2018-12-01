@@ -16,6 +16,15 @@
                     <ul>
                         <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
                     </ul>
+
+                    <div class="review-tags">
+                        <ul>
+                            {% for tag in ml_course.tags %}
+                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
                 {% endfor %}
             {% endif %}
             <h2>Programming</h2>
@@ -25,6 +34,14 @@
                     <ul>
                         <a href="{% url 'reviews:review-detail' cs_course.pk cs_course.slug %}">{{ cs_course.resource_name }}</a>
                     </ul>
+                    <div class="review-tags">
+                        <ul>
+                            {% for tag in cs_course.tags %}
+                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
                 {% endfor %}
             {% endif %}
         </div>
