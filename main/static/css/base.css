@@ -183,7 +183,7 @@ footer {
 }
 .review-tags ul li a {
 	display: inline-block;
-	max-width: 100px;
+	/*max-width: 100px;*/
 	height: 28px;
 	line-height: 28px;
 	padding: 0 1em;
@@ -191,7 +191,7 @@ footer {
 	border: 1px solid #aaa;
 	border-radius: 3px;
 	white-space: nowrap;
-	text-overflow: ellipsis;
+	/*text-overflow: ellipsis;*/
 	overflow: hidden;
 	color: #333;
 	font-size: 13px;
