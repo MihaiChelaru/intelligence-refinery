@@ -10,25 +10,27 @@
                 mining.</p>
         </div>
 
-        <div class="book-list">
-            <h2>Machine Learning</h2>
-            <hr>
-            {% if ml_books %}
-                {% for ml_book in ml_books %}
-                    <ul>
-                        <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
-                    </ul>
+        {% if ml_books %}
+            <div class="review-list">
+                <h2>Machine Learning</h2>
+                <hr>
+                <ul>
+                    {% for ml_book in ml_books %}
+                        <li>
+                            <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
+                        </li>
 
-                    <div class="review-tags">
-                        <ul>
-                            {% for tag in ml_book.tags.all %}
-                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
+                        <div class="review-tags">
+                            <ul>
+                                {% for tag in ml_book.tags.all %}
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
     </div>
 
 {% endblock %}

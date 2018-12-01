@@ -205,6 +205,10 @@ footer {
 	color: #fff;
 }
 
+.review-list ul {
+    list-style-type: none;
+}
+
 @media only screen and (min-width: 992px) {
     aside {
         display: flex;

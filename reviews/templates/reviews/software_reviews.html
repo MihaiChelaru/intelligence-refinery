@@ -8,26 +8,29 @@
                 benefits and drawbacks of each to save you time.</p>
         </div>
 
-        <div class="software-list">
-            <h2>IDEs</h2>
-            <hr>
-            {% if ides %}
-                {% for ide in ides %}
-                    <ul>
-                        <a href="{% url 'reviews:review-detail' ide.pk ide.slug %}">{{ ide.resource_name }}</a>
-                    </ul>
+        {% if ides %}
+            <div class="review-list">
+                <h2>IDEs</h2>
+                <hr>
+                <ul>
+                    {% for ide in ides %}
+                        <li>
+                            <a href="{% url 'reviews:review-detail' ide.pk ide.slug %}">{{ ide.resource_name }}</a>
+                        </li>
 
-                    <div class="review-tags">
-                        <ul>
-                            {% for tag in ide.tags.all %}
-                                <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                        <div class="review-tags">
+                            <ul>
+                                {% for tag in ide.tags.all %}
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
 
-                {% endfor %}
-            {% endif %}
-        </div>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        {% endif %}
     </div>
 
 {% endblock %}
