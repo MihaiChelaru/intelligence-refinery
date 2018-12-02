@@ -184,8 +184,8 @@ footer {
 .review-tags ul li a {
 	display: inline-block;
 	/*max-width: 100px;*/
-	height: 24px;
-	line-height: 24px;
+	height: 20px;
+	line-height: 20px;
 	padding: 0 0.4em;
 	background-color: #fff;
 	border: 1px solid #aaa;
@@ -194,7 +194,7 @@ footer {
 	/*text-overflow: ellipsis;*/
 	overflow: hidden;
 	color: #333;
-	font-size: 12px;
+	font-size: 11px;
 	text-decoration: none;
 	-webkit-transition: .2s;
 	transition: .2s;
@@ -207,6 +207,7 @@ footer {
 
 .review-list ul {
     list-style-type: none;
+    font-size: 20px;
 }
 
 @media only screen and (min-width: 992px) {
