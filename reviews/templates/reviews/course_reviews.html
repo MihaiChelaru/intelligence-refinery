@@ -17,11 +17,13 @@
                         <li>
                             <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
                         </li>
-
+                        {% load blog_tagcloud %}
                         <div class="review-tags">
                             <ul>
                                 {% for tag in ml_course.tags.all %}
-                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}"
+                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 0.3, 0.99)">{{ tag.slug }}
+                                    </a></li>
                                 {% endfor %}
                             </ul>
                         </div>
