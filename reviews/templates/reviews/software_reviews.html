@@ -17,7 +17,7 @@
                         <li>
                             <a href="{% url 'reviews:review-detail' ide.pk ide.slug %}">{{ ide.resource_name }}</a>
                         </li>
-
+                        {% load blog_tagcloud %}
                         <div class="review-tags">
                             <ul>
                                 {% for tag in ide.tags.all %}
