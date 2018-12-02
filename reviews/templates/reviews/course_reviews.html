@@ -22,7 +22,7 @@
                             <ul>
                                 {% for tag in ml_course.tags.all %}
                                     <li><a href="{% url 'posts-by-tag' tag.slug %}"
-                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 30%, 99%)">{{ tag.slug }}
+                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">{{ tag.slug }}
                                     </a></li>
                                 {% endfor %}
                             </ul>
