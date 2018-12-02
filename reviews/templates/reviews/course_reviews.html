@@ -22,8 +22,8 @@
                             <ul>
                                 {% for tag in ml_course.tags.all %}
                                     <li><a href="{% url 'posts-by-tag' tag.slug %}"
-                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">{{ tag.slug }}
-                                    </a></li>
+                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                        {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -43,7 +43,9 @@
                         <div class="review-tags">
                             <ul>
                                 {% for tag in cs_course.tags.all %}
-                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}"
+                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                        {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>

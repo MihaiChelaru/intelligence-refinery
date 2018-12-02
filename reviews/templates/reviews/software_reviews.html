@@ -21,7 +21,9 @@
                         <div class="review-tags">
                             <ul>
                                 {% for tag in ide.tags.all %}
-                                    <li><a href="{% url 'posts-by-tag' tag.slug %}">{{ tag.slug }}</a></li>
+                                    <li><a href="{% url 'posts-by-tag' tag.slug %}"
+                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                        {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>

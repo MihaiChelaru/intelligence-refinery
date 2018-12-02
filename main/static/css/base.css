@@ -173,7 +173,7 @@ footer {
 
 .review-tags ul {
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 1em;
 	list-style: none;
 }
 .review-tags ul li {
