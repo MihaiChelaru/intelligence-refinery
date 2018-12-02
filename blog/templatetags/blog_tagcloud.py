@@ -14,4 +14,4 @@ def to_int(value):
 
 @register.filter()
 def id_to_color(value):
-    return (value * 0.618033988749895) % 1
+    return ((value * 0.618033988749895) % 1) * 360
