@@ -17,7 +17,7 @@
                 <ul>
                     {% for ml_book in ml_books %}
                         <li>
-                            <a href="{% url 'reviews:review-detail' ml_book.pk ml_book.slug %}">{{ ml_book.resource_name }}</a>
+                            <a href="{{ ml_book.get_absolute_url }}">{{ ml_book.resource_name }}</a>
                         </li>
                         {% load blog_tagcloud %}
                         <div class="review-tags">

@@ -15,7 +15,7 @@
                 <ul>
                     {% for ide in ides %}
                         <li>
-                            <a href="{% url 'reviews:review-detail' ide.pk ide.slug %}">{{ ide.resource_name }}</a>
+                            <a href="{{ ide.get_absolute_url }}">{{ ide.resource_name }}</a>
                         </li>
                         {% load blog_tagcloud %}
                         <div class="review-tags">

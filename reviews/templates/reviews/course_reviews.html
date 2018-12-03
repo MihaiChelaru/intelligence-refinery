@@ -15,7 +15,7 @@
                 <ul>
                     {% for ml_course in ml_courses %}
                         <li>
-                            <a href="{% url 'reviews:review-detail' ml_course.pk ml_course.slug %}">{{ ml_course.resource_name }}</a>
+                            <a href="{{ ml_course.get_absolute_url }}">{{ ml_course.resource_name }}</a>
                         </li>
                         {% load blog_tagcloud %}
                         <div class="review-tags">
@@ -37,7 +37,7 @@
                 <ul>
                     {% for cs_course in cs_courses %}
                         <li>
-                            <a href="{% url 'reviews:review-detail' cs_course.pk cs_course.slug %}">{{ cs_course.resource_name }}</a>
+                            <a href="{{ cs_course.get_absolute_url }}">{{ cs_course.resource_name }}</a>
                         </li>
 
                         <div class="review-tags">
