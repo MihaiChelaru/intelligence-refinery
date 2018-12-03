@@ -33,7 +33,7 @@ class Review(models.Model):
     resource_type = models.ForeignKey(Resource, on_delete=models.SET_NULL, null=True)
 
     def get_absolute_url(self):
-        return reverse('reviews:review-detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('reviews:review-detail', kwargs={'review_id': self.pk, 'slug': self.slug})
 
     def __str__(self):
         """

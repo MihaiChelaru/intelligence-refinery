@@ -48,7 +48,7 @@ class Post(models.Model):
     tags = tagulous.models.TagField(to=SiteTags)
 
     def get_absolute_url(self):
-        return reverse('blog:post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('blog:post-detail', kwargs={'post_id': self.pk, 'slug': self.slug})
 
     def __str__(self):
         """
