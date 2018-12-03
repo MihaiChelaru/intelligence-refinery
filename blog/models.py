@@ -19,7 +19,7 @@ class SiteTags(tagulous.models.TagModel):
         '''
         :return: Returns the URL to the posts-by-tag page corresponding to this particular tag.
         '''
-        return reverse('posts-by-tag', kwargs={'slug': self.slug})
+        return reverse('main:posts-by-tag', kwargs={'slug': self.slug})
 
 # Models for blog app
 class Author(models.Model):
@@ -48,7 +48,7 @@ class Post(models.Model):
     tags = tagulous.models.TagField(to=SiteTags)
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('blog:post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
 
     def __str__(self):
         """
