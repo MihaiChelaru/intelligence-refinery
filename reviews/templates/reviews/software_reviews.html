@@ -17,12 +17,11 @@
                         <li>
                             <a href="{{ ide.get_absolute_url }}">{{ ide.resource_name }}</a>
                         </li>
-                        {% load blog_tagcloud %}
                         <div class="review-tags">
                             <ul>
                                 {% for tag in ide.tags.all %}
                                     <li><a href="{% url 'posts-by-tag' tag.slug %}"
-                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                           style="background-color: hsl({{ tag.color }})">
                                         {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>

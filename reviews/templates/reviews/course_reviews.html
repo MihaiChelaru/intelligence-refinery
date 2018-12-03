@@ -17,12 +17,11 @@
                         <li>
                             <a href="{{ ml_course.get_absolute_url }}">{{ ml_course.resource_name }}</a>
                         </li>
-                        {% load blog_tagcloud %}
                         <div class="review-tags">
                             <ul>
                                 {% for tag in ml_course.tags.all %}
-                                    <li><a href="{% url 'posts-by-tag' tag.slug %}"
-                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                    <li><a href="{{ tag.get_absolute_url }}"
+                                           style="background-color: hsl({{ tag.color }})">
                                         {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>
@@ -43,8 +42,8 @@
                         <div class="review-tags">
                             <ul>
                                 {% for tag in cs_course.tags.all %}
-                                    <li><a href="{% url 'posts-by-tag' tag.slug %}"
-                                           style="background-color: hsl({{ tag.pk|id_to_color }}, 60%, 80%)">
+                                    <li><a href="{{ tag.get_absolute_url }}"
+                                           style="background-color: hsl({{ tag.color }})">
                                         {{ tag.slug }}</a></li>
                                 {% endfor %}
                             </ul>

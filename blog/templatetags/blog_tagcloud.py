@@ -11,7 +11,3 @@ def tag_cloud():
 @register.filter()
 def to_int(value):
     return int(value)
-
-@register.filter()
-def id_to_color(value):
-    return ((value * 0.618033988749895) % 1) * 360
