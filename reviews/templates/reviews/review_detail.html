@@ -5,15 +5,17 @@
 {% block content %}
     <div class="content">
         <h2><a href="{{ review.url }}">{{ review.resource_name }}</a></h2>
-        <p>
-            <b>{{ author.first_name }} {{ author.last_name }}</b>
-            <a href="{{ author.github }}"><i class="fab fa-github-square fa-lg"></i></a>
-            {% if author.stack_overflow %}
-                <a href="{{ author.stack_overflow }}"><i class="fab fa-stack-overflow fa-lg"></i></a>
-            {% endif %}
-        </p>
-        <p>{{ resource_type.name }} by {{ review.resource_author }}</p>
-        <p>Resource last updated: {{ review.last_updated }}</p>
+        <div class="post-header">
+            <p>
+                <b>{{ author.first_name }} {{ author.last_name }}</b>
+                <a href="{{ author.github }}"><i class="fab fa-github-square fa-lg"></i></a>
+                {% if author.stack_overflow %}
+                    <a href="{{ author.stack_overflow }}"><i class="fab fa-stack-overflow fa-lg"></i></a>
+                {% endif %}
+            </p>
+            <p>{{ resource_type.name }} by {{ review.resource_author }}</p>
+            <p>Resource last updated: {{ review.last_updated }}</p>
+        </div>
         <div class="review-tags">
             <ul>
                 {% for tag in review.tags.all %}

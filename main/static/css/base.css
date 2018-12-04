@@ -82,6 +82,10 @@ footer {
     margin-bottom: 20px;
 }
 
+.post-header {
+    padding-left: 1em;
+}
+
 #learn-more {
     font-weight: bold;
     font-size: 1.5em;
@@ -173,7 +177,7 @@ footer {
 
 .review-tags ul {
 	margin: 0;
-	padding: 0 0 0 1em;
+	padding-left: 1em;
 	list-style: none;
 }
 .review-tags ul li {
