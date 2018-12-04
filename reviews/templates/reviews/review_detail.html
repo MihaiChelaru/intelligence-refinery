@@ -5,19 +5,24 @@
 {% block content %}
     <div class="content">
         <h2><a href="{{ review.url }}">{{ review.resource_name }}</a></h2>
-        <p>Last updated: {{ review.last_updated }}</p>
-        <p>{{ resource_type.name }} by {{ review.resource_author }}</p>
-        {% load static %}
         <p>
-            Reviewed by {{ author.first_name }} {{ author.last_name }}
+            <b>{{ author.first_name }} {{ author.last_name }}</b>
             <a href="{{ author.github }}"><i class="fab fa-github-square fa-lg"></i></a>
             {% if author.stack_overflow %}
                 <a href="{{ author.stack_overflow }}"><i class="fab fa-stack-overflow fa-lg"></i></a>
             {% endif %}
         </p>
-        {% for tag in review.tags.all %}
-            <a class="tag-link" href="{% url 'posts-by-tag' tag.slug %}">#{{ tag.name }}</a>
-        {% endfor %}
+        <p>{{ resource_type.name }} by {{ review.resource_author }}</p>
+        <p>Resource last updated: {{ review.last_updated }}</p>
+        <div class="review-tags">
+            <ul>
+                {% for tag in review.tags.all %}
+                    <li><a href="{{ tag.get_absolute_url }}"
+                           style="background-color: hsl({{ tag.color }})">
+                        {{ tag.slug }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
         <hr>
         {{ review.content|safe }}
     </div>

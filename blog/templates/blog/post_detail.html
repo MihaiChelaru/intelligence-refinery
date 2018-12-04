@@ -5,19 +5,24 @@
 {% block content %}
     <div class="content">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.publication_date }}</p>
-        {% load static %}
         <p>
-            By {{ author.first_name }} {{ author.last_name }}
+            <b>{{ author.first_name }} {{ author.last_name }}</b>
             <a href="{{ author.github }}"><i class="fab fa-github-square fa-lg"></i></a>
 
             {% if author.stack_overflow %}
                 <a href="{{ author.stack_overflow }}"><i class="fab fa-stack-overflow fa-lg"></i></a>
             {% endif %}
         </p>
-        {% for tag in post.tags.all %}
-            <a class="tag-link" href="{{ tag.get_absolute_url }}">#{{ tag.name }}</a>
-        {% endfor %}
+        <p>{{ post.publication_date }}</p>
+        <div class="review-tags">
+            <ul>
+                {% for tag in post.tags.all %}
+                    <li><a href="{{ tag.get_absolute_url }}"
+                           style="background-color: hsl({{ tag.color }})">
+                        {{ tag.slug }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
         <hr>
         {{ post.content|safe }}
     </div>
