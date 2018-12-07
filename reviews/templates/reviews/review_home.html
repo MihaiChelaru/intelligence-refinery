@@ -15,21 +15,21 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Courses</h5>
                             <p class="card-text">Online university courses and MOOCs summarized and rated.</p>
-                            <a id="read-more" href="{% url 'reviews' 'courses' %}" class="mt-auto btn btn-dark ">See Reviews</a>
+                            <a id="read-more" href="{% url 'reviews:review-list' 'courses' %}" class="mt-auto btn btn-dark ">See Reviews</a>
                         </div>
                     </div>
                     <div class="card text-white bg-info mb-4">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Books</h5>
                             <p class="card-text">Textbooks, manuals, and related non-fiction.</p>
-                            <a id="read-more" href="{% url 'reviews' 'books'%}" class="mt-auto btn btn-dark ">See Reviews</a>
+                            <a id="read-more" href="{% url 'reviews:review-list' 'books'%}" class="mt-auto btn btn-dark ">See Reviews</a>
                         </div>
                     </div>
                     <div class="card text-white bg-primary mb-4">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Software</h5>
                             <p class="card-text">Tools we've used day-to-day rated for usefulness and value.</p>
-                            <a id="read-more" href="{% url 'reviews' 'software' %}" class="mt-auto btn btn-dark ">See Reviews</a>
+                            <a id="read-more" href="{% url 'reviews:review-list' 'software' %}" class="mt-auto btn btn-dark ">See Reviews</a>
                         </div>
                     </div>
                 </div>
