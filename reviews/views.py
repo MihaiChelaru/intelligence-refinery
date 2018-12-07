@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from markdownx.utils import markdownify
 
-from .models import Review
+from .models import Review, Resource
 
 
 def review_detail(request, review_id, slug):
@@ -46,3 +46,28 @@ def software_list(request):
     """
     ides = Review.objects.filter(resource_type__name__exact="Software", tags="ide")
     return render(request, 'reviews/software_reviews.html', {"ides": ides})
+
+
+def review_list(request, resource_type):
+    """
+    :param request:
+    :param resource_type: The type of resource to generate a review list for.
+    :return: Returns a list of reviews of that particular resource_type.
+    """
+    resources = Review.objects.filter(resource_type__slug__exact=resource_type.lower())
+    if resources:
+        review_dict = None
+        review_type = Resource.objects.get(slug__exact=resource_type.lower())
+        if resource_type.lower() == "courses":
+            ml_courses = Review.objects.filter(resource_type__name__exact="Online Course", tags="machine-learning")
+            cs_courses = Review.objects.filter(resource_type__name__exact="Online Course", tags="programming")
+            review_dict = {"Machine Learning": ml_courses, 'Programming': cs_courses}
+        elif resource_type.lower() == "books":
+            ml_books = Review.objects.filter(resource_type__name__exact="Book", tags="machine-learning")
+            review_dict = {'Machine Learning': ml_books}
+        elif resource_type.lower() == "software":
+            ides = Review.objects.filter(resource_type__name__exact="Software", tags="ide")
+            review_dict = {"IDEs": ides}
+        return render(request, 'reviews/review_list.html', context={'review_dict': review_dict, 'review_type': review_type})
+    else:
+        return redirect('reviews:review-home')

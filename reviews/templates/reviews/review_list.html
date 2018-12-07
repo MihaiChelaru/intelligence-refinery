@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">{{ review_type.name }} Reviews</h1>
+            <p class="lead">{{ review_type.blurb }}</p>
+        </div>
+
+        {% if review_dict %}
+            <div class="review-list">
+                {% for review_type, reviews in review_dict.items %}
+                    <h2>{{ review_type }}</h2>
+                    <hr>
+                    <ul>
+                        {% for review in reviews %}
+                            <li>
+                                <a href="{{ review.get_absolute_url }}">{{ review.resource_name }}</a>
+                            </li>
+                            <div class="review-tags">
+                                <ul>
+                                    {% for tag in review.tags.all %}
+                                        <li><a href="{{ tag.get_absolute_url }}"
+                                               style="background-color: hsl({{ tag.color }})">
+                                            {{ tag.slug }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

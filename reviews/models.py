@@ -10,6 +10,8 @@ class Resource(models.Model):
     Type of resource, such as a course or data repository.
     """
     name = models.CharField(max_length=100)
+    slug = models.CharField(max_length=40)
+    blurb = models.CharField(max_length=1000)
 
     def __str__(self):
         """

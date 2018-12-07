@@ -10,7 +10,7 @@ def post_list(request):
     """
     View function for viewing a list of the 10 most recent posts.
     """
-    posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')[:10]
+    posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
     return render(request, 'blog/post_list.html', {"posts": posts})
 
 
