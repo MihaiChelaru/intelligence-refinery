@@ -82,9 +82,8 @@ footer {
     margin-bottom: 20px;
 }
 
-.content li {
-    display: list-item;
-    list-style: disc;
+.content ul {
+    list-style-position: inside;
 }
 
 .post-header {
