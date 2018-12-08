@@ -82,6 +82,11 @@ footer {
     margin-bottom: 20px;
 }
 
+.content li {
+    display: list-item;
+    list-style: disc;
+}
+
 .post-header {
     padding-left: 1em;
 }
