@@ -61,10 +61,12 @@ def review_list(request, resource_type):
         if resource_type.lower() == "courses":
             ml_courses = Review.objects.filter(resource_type__name__exact="Online Course", tags="machine-learning")
             cs_courses = Review.objects.filter(resource_type__name__exact="Online Course", tags="programming")
-            review_dict = {"Machine Learning": ml_courses, 'Programming': cs_courses}
+            bd_courses = Review.objects.filter(resource_type__name__exact="Online Course", tags="big-data")
+            review_dict = {"Machine Learning": ml_courses, 'Programming': cs_courses, 'Big Data': bd_courses}
         elif resource_type.lower() == "books":
             ml_books = Review.objects.filter(resource_type__name__exact="Book", tags="machine-learning")
-            review_dict = {'Machine Learning': ml_books}
+            pd_books = Review.objects.filter(resource_type__name__exact="Book", tags="professional-development")
+            review_dict = {'Machine Learning': ml_books, 'Professional Development': pd_books}
         elif resource_type.lower() == "software":
             ides = Review.objects.filter(resource_type__name__exact="Software", tags="ide")
             review_dict = {"IDEs": ides}
