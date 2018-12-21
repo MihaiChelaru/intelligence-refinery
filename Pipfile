@@ -12,6 +12,8 @@ django-markdownx = "*"
 django-heroku = "*"
 django-tagulous = "*"
 django-anymail = {extras = ["mailgun"], version = "*"}
+pillow = "*"
+wiki = "*"
 
 [requires]
 python_version = "3.6"

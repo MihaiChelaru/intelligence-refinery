@@ -36,4 +36,7 @@ urlpatterns = [
     path('portfolio/telco-churn/', TemplateView.as_view(template_name='main/telco_churn.html'), name='telco-churn'),
     path('tags/', views.tag_list, name='tag-list'),
     path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
+    # wiki urls
+    path('notifications/', include('django_nyt.urls')),
+    path('^wiki/', include('wiki.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
