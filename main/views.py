@@ -1,6 +1,6 @@
 from blog.models import SiteTags, Post
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, FileResponse, Http404
+from django.http import HttpResponse, FileResponse
 from django.shortcuts import render, redirect
 from reviews.models import Review
 
@@ -62,7 +62,6 @@ def posts_by_tag(request, slug):
     return render(request, 'main/posts_by_tag.html', {'blog_posts': blog_posts, 'reviews': reviews,'slug':slug})
 
 def curriculum_vitae_view(request):
-    try:
-        return FileResponse(open('static/pdf/Mihai_Chelaru_CV.pdf', 'rb'), content_type='application/pdf')
-    except FileNotFoundError:
-        raise Http404("Could not find PDF.")
+    return FileResponse(open('static/pdf/Mihai_Chelaru_CV.pdf', 'rb'), content_type='application/pdf')
+    # except FileNotFoundError:
+    #     raise Http404("Could not find PDF.")
