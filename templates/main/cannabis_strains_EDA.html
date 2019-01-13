@@ -14501,10 +14501,12 @@ div#notebook {
 <div class="prompt"></div>
 
 
-
+{% verbatim %}
 <div class="output_html rendered_html output_subarea ">
-<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {require(['plotly'],function(plotly) {window.Plotly=plotly;});}</script>
+<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
 </div>
+
+{% endverbatim %}
 
 </div>
 
