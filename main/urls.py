@@ -32,6 +32,7 @@ urlpatterns = [
     path('success/', TemplateView.as_view(template_name='main/success.html'), name='success'),
     path('portfolio/', TemplateView.as_view(template_name='main/portfolio.html'), name='portfolio'),
     path('resources/', TemplateView.as_view(template_name='main/resources.html'), name='resources'),
+    path('portfolio/curriculum-vitae/', views.curriculum_vitae_view, name='curriculum-vitae'),
     path('portfolio/cannabis-eda/', TemplateView.as_view(template_name='main/cannabis_strains_EDA.html'), name='cannabis-eda'),
     path('portfolio/telco-churn/', TemplateView.as_view(template_name='main/telco_churn.html'), name='telco-churn'),
     path('tags/', views.tag_list, name='tag-list'),

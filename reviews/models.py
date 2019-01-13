@@ -4,6 +4,7 @@ from django.urls import reverse
 from markdownx.models import MarkdownxField
 from tagulous.models import TagField
 
+# TODO: Refactor reviews as resources and add notes as a URLField
 
 class Resource(models.Model):
     """
