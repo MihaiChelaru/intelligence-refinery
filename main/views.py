@@ -64,6 +64,6 @@ def posts_by_tag(request, slug):
 
 def curriculum_vitae_view(request):
     try:
-        return FileResponse(open(static('main/pdf/Mihai_Chelaru_CV.pdf'), 'rb'), content_type='application/pdf')
+        return FileResponse(open(static('pdf/Mihai_Chelaru_CV.pdf'), 'rb'), content_type='application/pdf')
     except FileNotFoundError:
         raise Http404()
