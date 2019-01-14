@@ -34,7 +34,7 @@ def contact(request):
             subject = form.cleaned_data['subject']
             message =  f"Sent by: {name} <{email}>\n\n" + form.cleaned_data['message']
             try:
-                send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['admin@intelligencerefinery.io'])
+                send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['intelligence.refinery@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
