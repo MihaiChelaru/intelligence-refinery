@@ -41,5 +41,3 @@ urlpatterns = [
     path('notifications/', include('django_nyt.urls')),
     path('wiki/', include('wiki.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-admin.autodiscover()
