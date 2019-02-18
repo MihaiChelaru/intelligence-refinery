@@ -39,5 +39,7 @@ urlpatterns = [
     path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
     # wiki urls
     path('notifications/', include('django_nyt.urls')),
-    path('^wiki/', include('wiki.urls')),
+    path('wiki/', include('wiki.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+admin.autodiscover()
