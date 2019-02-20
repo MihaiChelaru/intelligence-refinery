@@ -11,6 +11,12 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+.content {
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+}
+
 nav {
     background-color: #b7defa;
 }
