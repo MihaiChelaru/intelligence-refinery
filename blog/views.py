@@ -32,6 +32,7 @@ def post_detail(request, post_id, slug):
     post.content = markdownify(post.content)
     # Create table of contents to pass to context
     md = Markdown(extensions=['toc'])
+    html = md.convert(post.content)
     context = {
         'post': post,
         'author': author,
