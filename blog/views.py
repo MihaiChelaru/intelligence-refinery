@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from markdown import Markdown
 from markdownx.utils import markdownify
 
 from .models import Post
@@ -29,4 +30,11 @@ def post_detail(request, post_id, slug):
     author = post.author
     # markdownify() content and display on page
     post.content = markdownify(post.content)
-    return render(request, 'blog/post_detail.html', {'post': post, 'author': author})
+    # Create table of contents to pass to context
+    md = Markdown(extensions=['toc'])
+    context = {
+        'post': post,
+        'author': author,
+        'toc': md.toc
+    }
+    return render(request, 'blog/post_detail.html', context)
