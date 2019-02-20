@@ -78,31 +78,28 @@
         </div>
     </header>
 
-
-    <div id="center-page">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-9">
-                    {% block content %}{% endblock %}
-                </div>
-                <div class="col-sm-3" id="scrollSpy">
-                    {% block sidebar %}{% endblock %}
-
-                    <ul class="sidebar">
-                        {% load blog_tagcloud %}
-                        {% tag_cloud %}
-                    </ul>
-                </div>
-
+    <div class="row">
+        <div class="col-sm-2" id="scrollSpy">
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div id="center-page" class="col-lg-8">
+            <div class="container-fluid">
+                {% block content %}{% endblock %}
             </div>
         </div>
-
-
-        <footer>
-            <p>Written in Django and powered by Heroku</p>
-            <p>© 2018-2019 Intelligence Refinery</p>
-        </footer>
     </div>
+    <div class="col-sm-2">
+        <ul class="sidebar">
+            {% load blog_tagcloud %}
+            {% tag_cloud %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>Written in Django and powered by Heroku</p>
+        <p>© 2018-2019 Intelligence Refinery</p>
+    </footer>
+</div>
 </div>
 
 <script src="{% static 'js/highlight.pack.js' %}"></script>

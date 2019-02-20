@@ -28,7 +28,8 @@ body {
 }
 
 .affix {
-  top: 0;
+    top: 200px;
+    position: fixed;
 }
 
 blockquote {

@@ -2,10 +2,10 @@ $( document ).ready(function() {
     // Add affix top to element when scrolling up, otherwise remove it.
     $(window).on('scroll', function (event) {
         var scrollValue = $(window).scrollTop();
-        if (scrollValue > 120) {
-            $('#scrollSpy').addClass('affix');
+        if (scrollValue > 200) {
+            $('.toc').addClass('affix');
         } else{
-            $('#scrollSpy').removeClass('affix');
+            $('.toc').removeClass('affix');
         }
     });
 });
