@@ -33,11 +33,11 @@
 {% endblock %}
 
 {% block sidebar %}
-    <div id="scrollSpy" class="navbar flex-column">
+    <nav id="scrollSpy" class="navbar flex-column">
         {% if toc %}
             {#        {{ toc|safe }}#}
             <ul class="nav">
-                <li><a href="#latitude-and-longitude">Latitude and Longitude</a></li>
+                <li class="nav-item"><a href="#latitude-and-longitude">Latitude and Longitude</a></li>
 {#                    <ul>#}
 {#                        <li><a href="#definition-of-latitude-and-longitude">Definition of Latitude and Longitude</a>#}
 {#                        </li>#}
@@ -51,10 +51,10 @@
 {#                        </li>#}
 {#                    </ul>#}
 {#                </li>#}
-                <li><a href="#census-demographics">Census Demographics</a></li>
-                <li><a href="#geographic-hierarchies">Geographic Hierarchies</a></li>
-                <li><a href="#mapping-in-excel">Mapping in Excel</a></li>
+                <li class="nav-item"><a class="nav-link" href="#census-demographics">Census Demographics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#geographic-hierarchies">Geographic Hierarchies</a></li>
+                <li class="nav-item"><a class="nav-link" href="#mapping-in-excel">Mapping in Excel</a></li>
             </ul>
         {% endif %}
-    </div>
+    </nav>
 {% endblock %}
