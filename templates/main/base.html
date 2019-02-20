@@ -86,23 +86,19 @@
         </div>
     </div>
     <div class="row no-gutters">
-        <div class="col-sm-2" id="scrollSpy">
-            <div class="container-fluid toc-nav">
+        <div class="col-sm-2">
                 {% block sidebar %}{% endblock %}
-            </div>
         </div>
         <div id="center-page" class="col-lg-8">
             <div class="container-fluid">
                 {% block content %}{% endblock %}
             </div>
         </div>
-        <div class="col-sm-2">
-            <div class="container-fluid sidebar-nav">
-                <ul class="sidebar">
+        <div id="tags-col" class="col-sm-2">
+                <ul class="sidebar align-self-center">
                     {% load blog_tagcloud %}
                     {% tag_cloud %}
                 </ul>
-            </div>
         </div>
     </div>
     <div class="row">

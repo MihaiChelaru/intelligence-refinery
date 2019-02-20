@@ -28,7 +28,7 @@ body {
 }
 
 .affix {
-    top: 200px;
+    top: 0;
     position: fixed;
 }
 
@@ -39,12 +39,12 @@ blockquote {
     border-left: 2px solid #ffeb8e;
 }
 
-.sidebar-nav {
+#tags-col {
     background: rgb(255, 255, 255);
     opacity: 0.7;
 }
 
-.toc-nav {
+#toc-col {
     background: rgb(255, 255, 255);
     opacity: 0.7;
 }
