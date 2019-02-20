@@ -1,6 +1,8 @@
+import markdown
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from markdown import Markdown
+from django.utils.text import slugify
+from markdown.extensions.toc import TocExtension
 from markdownx.utils import markdownify
 
 from .models import Post
@@ -28,7 +30,7 @@ def post_detail(request, post_id, slug):
     if post.slug != slug:
         return redirect('blog:post-detail', post_id=post.pk, slug=post.slug)
     author = post.author
-    md = Markdown(extensions=['toc'])
+    md = markdown.Markdown(extensions=[TocExtension(slugify=slugify),])
     html = md.convert(post.content)
     # markdownify() content and display on page
     post.content = markdownify(post.content)

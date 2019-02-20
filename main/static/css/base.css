@@ -29,16 +29,6 @@ body {
 
 .affix {
   top: 0;
-  width: 100%;
-}
-
-.affix-top {
-  width: 100%;
-}
-
-.affix-bottom {
-  position: absolute;
-  width: 100%;
 }
 
 blockquote {
