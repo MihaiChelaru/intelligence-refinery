@@ -84,13 +84,16 @@
         </section>
 
         <aside>
+        <div class="container" data-spy="affix" data-offset-top="205">
             {% block sidebar %}
             {% endblock %}
-            <ul class="sidebar">
-                {% load blog_tagcloud %}
-                {% tag_cloud %}
-            </ul>
-
+            <div>
+                <ul class="sidebar">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
+                </ul>
+            </div>
+        </div>
         </aside>
     </div>
 
