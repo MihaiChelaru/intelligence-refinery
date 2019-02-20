@@ -34,8 +34,27 @@
 
 {% block sidebar %}
     <nav id="scrollSpy" class="nav flex-column">
-    {% if toc %}
-        {{ toc|safe }}
-    {% endif %}
+        {% if toc %}
+            {#        {{ toc|safe }}#}
+            <ul>
+                <li><a href="#latitude-and-longitude">Latitude and Longitude</a>
+                    <ul>
+                        <li><a href="#definition-of-latitude-and-longitude">Definition of Latitude and Longitude</a>
+                        </li>
+                        <li><a href="#degrees-minutes-seconds-and-all-that">Degrees, Minutes, Seconds, and All That</a>
+                        </li>
+                        <li><a href="#distance-between-two-locations">Distance between Two Locations</a>
+                            <ul>
+                                <li><a href="#the-euclidian-method">The Euclidian Method</a></li>
+                                <li><a href="#the-haversine-formula">The Haversine formula</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#census-demographics">Census Demographics</a></li>
+                <li><a href="#geographic-hierarchies">Geographic Hierarchies</a></li>
+                <li><a href="#mapping-in-excel">Mapping in Excel</a></li>
+            </ul>
+        {% endif %}
     </nav>
 {% endblock %}
