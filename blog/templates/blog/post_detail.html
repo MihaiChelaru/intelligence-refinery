@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block sidebar %}
-    <nav id="scrollSpy" class="nav flex-column">
+    <div id="scrollSpy" class="navbar flex-column">
         {% if toc %}
             {#        {{ toc|safe }}#}
             <ul>
@@ -56,5 +56,5 @@
                 <li><a href="#mapping-in-excel">Mapping in Excel</a></li>
             </ul>
         {% endif %}
-    </nav>
+    </div>
 {% endblock %}
