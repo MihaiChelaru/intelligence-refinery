@@ -3,9 +3,9 @@ $( document ).ready(function() {
     $(window).on('scroll', function (event) {
         var scrollValue = $(window).scrollTop();
         if (scrollValue > 70) {
-            $('.toc').addClass('affix');
+            $('#scrollSpy').addClass('affix');
         } else{
-            $('.toc').removeClass('affix');
+            $('#scrollSpy').removeClass('affix');
         }
     });
 });
