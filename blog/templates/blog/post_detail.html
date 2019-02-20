@@ -33,9 +33,9 @@
 {% endblock %}
 
 {% block sidebar %}
-    <div  id="scrollSpy">
+    <nav id="scrollSpy" class="nav flex-column">
     {% if toc %}
         {{ toc|safe }}
     {% endif %}
-    </div>
+    </nav>
 {% endblock %}
