@@ -28,11 +28,11 @@ def post_detail(request, post_id, slug):
     if post.slug != slug:
         return redirect('blog:post-detail', post_id=post.pk, slug=post.slug)
     author = post.author
+    md = Markdown(extensions=['toc'])
+    html = md.convert(post.content)
     # markdownify() content and display on page
     post.content = markdownify(post.content)
     # Create table of contents to pass to context
-    md = Markdown(extensions=['toc'])
-    html = md.convert(post.content)
     context = {
         'post': post,
         'author': author,
