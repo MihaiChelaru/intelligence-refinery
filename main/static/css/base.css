@@ -30,17 +30,8 @@ body {
 }
 
 .affix {
-  top: 150px;
-  width: 100%;
-}
-
-.affix-top {
-  width: 100%;
-}
-
-.affix-bottom {
-  position: absolute;
-  width: 100%;
+    top: 20px;
+    z-index: 10;
 }
 
 blockquote {
@@ -55,10 +46,10 @@ aside {
 }
 
 /*section {*/
-    /*!*flex: 8;*!*/
-    /*min-width: 0;*/
-    /*min-height: 0;*/
-    /*overflow: hidden;*/
+/*!*flex: 8;*!*/
+/*min-width: 0;*/
+/*min-height: 0;*/
+/*overflow: hidden;*/
 /*}*/
 
 footer {
