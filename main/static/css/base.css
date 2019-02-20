@@ -9,7 +9,6 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    position: relative;
 }
 
 nav {
@@ -25,9 +24,23 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfe2f5', endColorstr='#ba81eb', GradientType=1); /* IE6-9 fallback on horizontal gradient */
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    position: relative;
     /*display: flex;*/
     /*flex-direction: column;*/
+}
+
+.affix {
+  top: 150px;
+  width: 100%;
+}
+
+.affix-top {
+  width: 100%;
+}
+
+.affix-bottom {
+  position: absolute;
+  width: 100%;
 }
 
 blockquote {
