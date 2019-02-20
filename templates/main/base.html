@@ -85,13 +85,14 @@
                 <div class="col-sm-9">
                     {% block content %}{% endblock %}
                 </div>
-                <nav class="col-sm-3" id="scrollSpy" class="navbar navbar-light" data-spy="affix">
+                <nav class="col-sm-3" id="scrollSpy" data-spy="affix">
                     {% block sidebar %}{% endblock %}
-                    <ul class="sidebar">
-                        {% load blog_tagcloud %}
-                        {% tag_cloud %}
-                    </ul>
                 </nav>
+                <ul class="sidebar">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
+                </ul>
+
             </div>
         </div>
 
@@ -101,7 +102,7 @@
             <p>© 2018-2019 Intelligence Refinery</p>
         </footer>
     </div>
-
+</div>
 
     <script src="{% static 'js/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>

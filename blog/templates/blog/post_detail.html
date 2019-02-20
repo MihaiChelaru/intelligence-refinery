@@ -33,5 +33,7 @@
 {% endblock %}
 
 {% block sidebar %}
-    {{ toc|safe }}
+    {% if toc %}
+        {{ toc|safe }}
+    {% endif %}
 {% endblock %}

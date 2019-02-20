@@ -25,13 +25,20 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
-    /*display: flex;*/
-    /*flex-direction: column;*/
 }
 
 .affix {
-    top: 20px;
-    z-index: 10;
+  top: 0;
+  width: 100%;
+}
+
+.affix-top {
+  width: 100%;
+}
+
+.affix-bottom {
+  position: absolute;
+  width: 100%;
 }
 
 blockquote {
