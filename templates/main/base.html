@@ -26,7 +26,7 @@
     <title>{% block title %} Intelligence Refinery {% endblock %}</title>
 </head>
 
-<body data-spy="scroll" data-target="#scrollSpy" data-offset-top="100">
+<body data-spy="scroll" data-target="#scrollSpy">
 <div id="site-container" class="container">
     <header>
         <div id="nav-container" class="container-fluid flex-fill">
@@ -82,15 +82,15 @@
     <div id="center-page">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-sm-9">
+                    {% block content %}{% endblock %}
+                </div>
                 <div class="col-sm-3" id="scrollSpy">
                     {% block sidebar %}{% endblock %}
                     <ul class="sidebar">
                         {% load blog_tagcloud %}
                         {% tag_cloud %}
                     </ul>
-                </div>
-                <div class="col-sm-9">
-                    {% block content %}{% endblock %}
                 </div>
             </div>
         </div>
