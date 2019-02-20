@@ -80,23 +80,24 @@
 
     <div class="row">
         <div class="col-sm-2" id="scrollSpy">
-            {% block sidebar %}{% endblock %}
+            <div class="container-fluid toc-nav align-middle">
+                {% block sidebar %}{% endblock %}
+            </div>
         </div>
         <div id="center-page" class="col-lg-8">
             <div class="container-fluid">
                 {% block content %}{% endblock %}
             </div>
         </div>
-    </div>
-    <div class="col-sm-2">
-        <div class="container-fluid">
-            <ul class="sidebar">
-                {% load blog_tagcloud %}
-                {% tag_cloud %}
-            </ul>
+        <div class="col-sm-2">
+            <div class="container-fluid sidebar-nav align-middle">
+                <ul class="sidebar">
+                    {% load blog_tagcloud %}
+                    {% tag_cloud %}
+                </ul>
+            </div>
         </div>
     </div>
-
     <footer>
         <p>Written in Django and powered by Heroku</p>
         <p>© 2018-2019 Intelligence Refinery</p>
