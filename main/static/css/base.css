@@ -55,8 +55,8 @@ footer {
     background-color: #b7defa;
 }
 
-.content {
-    position: relative;
+.toc ul li {
+    padding: 0;
 }
 
 .card-footer {
@@ -87,6 +87,7 @@ footer {
     background: rgb(255, 255, 255);
     opacity: 0.8;
     padding: 30px;
+    position: relative;
 }
 
 .content h2 {

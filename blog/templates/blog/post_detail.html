@@ -3,7 +3,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <div class="content" data-spy="scroll" data-target=".toc" data-offset-top="100">
+    <div class="content">
         <h2>{{ post.title }}</h2>
         <div class="post-header">
             <p>
@@ -33,5 +33,7 @@
 {% endblock %}
 
 {% block sidebar %}
-    {{ toc|safe }}
+    <nav data-spy="affix" data-offset-top="205">
+        {{ toc|safe }}
+    </nav>
 {% endblock %}
