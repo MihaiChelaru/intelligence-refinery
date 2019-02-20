@@ -55,6 +55,10 @@ footer {
     background-color: #b7defa;
 }
 
+.content {
+    position: relative;
+}
+
 .card-footer {
     position: absolute;
     bottom: 0;

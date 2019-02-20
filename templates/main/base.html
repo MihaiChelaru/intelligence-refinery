@@ -85,11 +85,12 @@
 
         <aside>
             {% block sidebar %}
-                <ul class="sidebar">
-                    {% load blog_tagcloud %}
-                    {% tag_cloud %}
-                </ul>
             {% endblock %}
+            <ul class="sidebar">
+                {% load blog_tagcloud %}
+                {% tag_cloud %}
+            </ul>
+
         </aside>
     </div>
 
