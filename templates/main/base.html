@@ -89,10 +89,12 @@
         </div>
     </div>
     <div class="col-sm-2">
-        <ul class="sidebar">
-            {% load blog_tagcloud %}
-            {% tag_cloud %}
-        </ul>
+        <div class="container-fluid">
+            <ul class="sidebar">
+                {% load blog_tagcloud %}
+                {% tag_cloud %}
+            </ul>
+        </div>
     </div>
 
     <footer>
