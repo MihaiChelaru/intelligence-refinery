@@ -27,60 +27,67 @@
 </head>
 
 <body data-spy="scroll" data-target="#scrollSpy">
-<div id="site-container" class="container">
-    <header>
-        <div id="nav-container" class="container-fluid flex-fill">
-            <nav class="navbar sticky-top navbar-expand-lg navbar-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'resources' %}">Resources</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{% url 'reviews:reviews-home' %}"
-                               id="navbarDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Reviews
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{% url 'reviews:review-list' 'courses' %}">Courses</a>
-                                <a class="dropdown-item" href="{% url 'reviews:review-list' 'books' %}">Books</a>
-                                <a class="dropdown-item" href="{% url 'reviews:review-list' 'software' %}">Software</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
-                        </li>
-
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search posts by tag"
-                               aria-label="Search">
-                        <button class="btn btn-primary btn-outline-success my-2 my-sm-0" type="submit">Go!</button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </header>
-
+<div id="site-container" class="container-fluid">
     <div class="row">
+        <div class="col-lg">
+            <header>
+                <div id="nav-container" class="container-fluid flex-fill">
+                    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'home' %}">Home<span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'resources' %}">Resources</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{% url 'reviews:reviews-home' %}"
+                                       id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Reviews
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{% url 'reviews:review-list' 'courses' %}">Courses</a>
+                                        <a class="dropdown-item"
+                                           href="{% url 'reviews:review-list' 'books' %}">Books</a>
+                                        <a class="dropdown-item" href="{% url 'reviews:review-list' 'software' %}">Software</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                                </li>
+
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search posts by tag"
+                                       aria-label="Search">
+                                <button class="btn btn-primary btn-outline-success my-2 my-sm-0" type="submit">Go!
+                                </button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="row no-gutters">
         <div class="col-sm-2" id="scrollSpy">
-            <div class="container-fluid toc-nav align-middle">
+            <div class="container-fluid toc-nav">
                 {% block sidebar %}{% endblock %}
             </div>
         </div>
@@ -90,7 +97,7 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <div class="container-fluid sidebar-nav align-middle">
+            <div class="container-fluid sidebar-nav">
                 <ul class="sidebar">
                     {% load blog_tagcloud %}
                     {% tag_cloud %}
@@ -98,12 +105,16 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>Written in Django and powered by Heroku</p>
-        <p>© 2018-2019 Intelligence Refinery</p>
-    </footer>
+    <div class="row">
+        <div class="col-lg">
+            <footer>
+                <p>Written in Django and powered by Heroku</p>
+                <p>© 2018-2019 Intelligence Refinery</p>
+            </footer>
+        </div>
+    </div>
 </div>
-</div>
+
 
 <script src="{% static 'js/highlight.pack.js' %}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
