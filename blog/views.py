@@ -38,6 +38,10 @@ def post_detail(request, post_id, slug):
     tab_oc = md.toc
     tab_oc = tab_oc.replace(r'div class="toc"', r'nav id="scrollSpy" class="navbar flex-column"')
     tab_oc = tab_oc.replace(r'</div>', r'</nav>')
+    tab_oc = tab_oc.replace(r'<ul>', r'<nav class="nav nav-pills flex-column">')
+    tab_oc = tab_oc.replace(r'</ul>', r'</nav>')
+    tab_oc = tab_oc.replace(r'<li><a', r'<a class="nav-link"')
+    tab_oc = tab_oc.replace(r'</li>', '')
     context = {
         'post': post,
         'author': author,
