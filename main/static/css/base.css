@@ -12,9 +12,9 @@ body, html {
 }
 
 /*.content {*/
-    /*overflow-y: scroll;*/
-    /*height: 100%;*/
-    /*position: relative;*/
+/*overflow-y: scroll;*/
+/*height: 100%;*/
+/*position: relative;*/
 /*}*/
 
 nav {
@@ -31,6 +31,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+}
+
+#scrollSpy {
+    top: 55px;
+    position: sticky;
 }
 
 .affix {
@@ -77,6 +82,7 @@ footer {
 
 .sidebar {
     padding-left: 0;
+    padding-top: 55px;
 }
 
 .card-footer {
@@ -107,6 +113,7 @@ footer {
     background: rgb(255, 255, 255);
     opacity: 0.8;
     padding: 30px;
+    margin-top: 40px;
 }
 
 .content h2 {
