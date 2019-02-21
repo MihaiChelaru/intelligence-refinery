@@ -36,8 +36,8 @@ def post_detail(request, post_id, slug):
     post.content = markdownify(post.content)
     # Create table of contents to pass to context
     tab_oc = md.toc
-    tab_oc.replace(r'div class="toc"', r'nav id="scrollSpy" class="navbar flex-column"')
-    tab_oc.replace(r'</div>', r'</nav>')
+    tab_oc = tab_oc.replace(r'div class="toc"', r'nav id="scrollSpy" class="navbar flex-column"')
+    tab_oc = tab_oc.replace(r'</div>', r'</nav>')
     context = {
         'post': post,
         'author': author,
