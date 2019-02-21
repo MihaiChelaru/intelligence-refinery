@@ -17,10 +17,6 @@ body, html {
     /*position: relative;*/
 /*}*/
 
-.active {
-    color: black !important;
-}
-
 nav {
     background-color: #b7defa;
 }
@@ -39,7 +35,7 @@ body {
 
 .affix {
     top: 0;
-    position: fixed;
+    position: sticky;
 }
 
 blockquote {
