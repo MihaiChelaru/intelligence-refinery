@@ -35,9 +35,10 @@ def post_detail(request, post_id, slug):
     # markdownify() content and display on page
     post.content = markdownify(post.content)
     # Create table of contents to pass to context
+    tab_oc = md.toc
     context = {
         'post': post,
         'author': author,
-        'toc': md.toc
+        'toc': tab_oc
     }
     return render(request, 'blog/post_detail.html', context)
