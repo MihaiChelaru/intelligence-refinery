@@ -2,6 +2,12 @@
 
 {% block title %}Review | {{ review.resource_name }}{% endblock %}
 
+{% block sidebar %}
+    {% if toc %}
+        {{ toc|safe }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <div class="content">
         <h2><a href="{{ review.url }}">{{ review.resource_name }}</a></h2>
@@ -29,5 +35,4 @@
         {{ review.content|safe }}
     </div>
     <br>
-
 {% endblock %}
