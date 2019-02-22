@@ -38,6 +38,12 @@ body {
     position: sticky;
 }
 
+.tocify {
+    padding-top: 55px;
+    margin-left: 1%;
+    width: 14%;
+}
+
 .affix {
     top: 0;
     position: sticky;
