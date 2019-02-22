@@ -3,9 +3,10 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block sidebar %}
-{#    {% if toc %}#}
-{#        {{ toc|safe }}#}
-{#    {% endif %}#}
+    <div id="toc"></div>
+    {#    {% if toc %}#}
+    {#        {{ toc|safe }}#}
+    {#    {% endif %}#}
 {% endblock %}
 
 {% block content %}
