@@ -52,6 +52,13 @@ body {
     background-color: #92f5f9;
 }
 
+/* Add hanging indent to wrapped text if subheadings are too long */
+.tocify-subheader .tocify-item {
+    text-indent: -3em;
+    padding-left: 5em;
+    display: block;
+}
+
 .affix {
     top: 0;
     position: sticky;
