@@ -13,8 +13,10 @@
 $(function() {
   //Calls the tocify method on your HTML div.
   $("#toc").tocify({
-    extendPage:"false",
+    extendPage: "false",
+    extendPageOffset: -99999999999,
     scrollTo: 70,
     selectors: "h2,h3",
+    ignoreSelector: "#tag-header"
   });
 });
