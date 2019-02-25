@@ -18,25 +18,13 @@ def review_detail(request, review_id, slug):
         return redirect('reviews:review-detail', post_id=review.pk, slug=review.slug)
     author = review.review_author
     resource_type = review.resource_type
-    # md = markdown.Markdown(extensions=[TocExtension(slugify=slugify), ])
-    # html = md.convert(review.content)
     # markdownify() content and display on page
     review.content = markdownify(review.content)
-    # Use string.replace() to style elements for bootstrap dynamic table of contents
-    # # TODO: refactor this into a single method somewhere in a utils class
-    # tab_oc = md.toc
-    # tab_oc = tab_oc.replace(r'div class="toc"', r'nav id="scrollSpy" class="navbar flex-column"')
-    # tab_oc = tab_oc.replace(r'</div>', r'</nav>')
-    # tab_oc = tab_oc.replace(r'<ul>', r'<nav class="nav nav-pills flex-column">')
-    # tab_oc = tab_oc.replace(r'</ul>', r'</nav>')
-    # tab_oc = tab_oc.replace(r'<li><a', r'<a class="nav-link"')
-    # tab_oc = tab_oc.replace(r'</li>', '')
 
     context = {
         'review': review,
         'author': author,
         'resource_type': resource_type,
-        # 'toc': tab_oc
     }
 
     return render(request, 'reviews/review_detail.html',
