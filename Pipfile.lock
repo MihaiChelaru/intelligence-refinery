@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6709a39c3ba7306ce4cb5bf13ac8552f09f93df9deedac7d7021bfd6244cee13"
+            "sha256": "17ea6a5760e15d56432c729a090a64989952bd0e71decbda11329122c74e3197"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -55,10 +55,10 @@
                 "mailgun"
             ],
             "hashes": [
-                "sha256:845edd136d9945972c507fa4d975286904bf5cb9da137925a0e44fd93caed875",
-                "sha256:8a845b6daf398e266b323c551a087d61f08215119e67acb4b496843afe301988"
+                "sha256:ab5cbfb280492c9cb2ef0497f8ebda4dcb3f99603dcf63c88ae623a66cad71f4",
+                "sha256:f872089943f30283d485d121924598f4156f5bfa76a0885fd66df5205102be0b"
             ],
-            "version": "==5.0"
+            "version": "==6.0"
         },
         "django-classy-tags": {
             "hashes": [
@@ -66,6 +66,13 @@
                 "sha256:f6d12f5a4df3e387795a0d9ef2836af389cae9a1fbebda035dac043d4722b1f7"
             ],
             "version": "==0.8.0"
+        },
+        "django-debug-toolbar": {
+            "hashes": [
+                "sha256:89d75b60c65db363fb24688d977e5fbf0e73386c67acf562d278402a10fc3736",
+                "sha256:c2b0134119a624f4ac9398b44f8e28a01c7686ac350a12a74793f3dd57a9eea0"
+            ],
+            "version": "==1.11"
         },
         "django-heroku": {
             "hashes": [
@@ -76,10 +83,10 @@
         },
         "django-js-asset": {
             "hashes": [
-                "sha256:33684c322db4fdec7cbd854fa8af527a9d2a4ef302c11263c18a9e19b3c4bd24",
-                "sha256:613e177fc6946497ed5ab09de95e3152d66264dbdcccc680ae3830e75b347184"
+                "sha256:8ec12017f26eec524cab436c64ae73033368a372970af4cf42d9354fcb166bdd",
+                "sha256:c163ae80d2e0b22d8fb598047cd0dcef31f81830e127cfecae278ad574167260"
             ],
-            "version": "==1.2.1"
+            "version": "==1.2.2"
         },
         "django-markdownx": {
             "hashes": [
@@ -111,9 +118,9 @@
         },
         "django-tagulous": {
             "hashes": [
-                "sha256:593cf09f2f8b7f752388f1ee8cf4e7b8d33dfab56d23438b8dcd338f59922a76"
+                "sha256:d8dad2050c65e6e06d7cf5c7b0a21f60fc6dcd2175bc53370181382ad22219bd"
             ],
-            "version": "==0.13.2"
+            "version": "==0.14.0"
         },
         "gunicorn": {
             "hashes": [
@@ -240,6 +247,13 @@
                 "sha256:d9e3f018d19293824803e4ffead96b19dfcd44fa7987cea392f50436817bef34"
             ],
             "version": "==12.5.0"
+        },
+        "sqlparse": {
+            "hashes": [
+                "sha256:ce028444cfab83be538752a2ffdb56bc417b7784ff35bb9a3062413717807dec",
+                "sha256:d9cf190f51cbb26da0412247dfe4fb5f4098edb73db84e02f9fc21fdca31fed4"
+            ],
+            "version": "==0.2.4"
         },
         "urllib3": {
             "hashes": [

@@ -32,13 +32,22 @@ DATABASES = {
     }
 }
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['.herokuapp.com', '.intelligencerefinery.io', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    '.herokuapp.com',
+    '.intelligencerefinery.io',
+    '127.0.0.1',
+    'localhost'
+]
 
 # Application definition
 
@@ -66,9 +75,11 @@ INSTALLED_APPS = [
     'wiki.plugins.notifications.apps.NotificationsConfig',
     'wiki.plugins.images.apps.ImagesConfig',
     'wiki.plugins.macros.apps.MacrosConfig',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
