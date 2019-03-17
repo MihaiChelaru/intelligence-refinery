@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'blog.apps.BlogConfig',
     'reviews.apps.ReviewConfig',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sessions',

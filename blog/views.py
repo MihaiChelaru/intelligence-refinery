@@ -1,3 +1,5 @@
+from blog.models import SiteTags
+from dal import autocomplete
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from markdownx.utils import markdownify
@@ -35,3 +37,13 @@ def post_detail(request, post_id, slug):
         'author': author,
     }
     return render(request, 'blog/post_detail.html', context)
+
+
+class TagAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = SiteTags.objects.all()
+
+        if self.q:
+            qs = qs.filter(slug__icontains=self.q).order_by('slug')
+
+        return qs
