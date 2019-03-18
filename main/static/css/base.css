@@ -38,6 +38,13 @@ body {
     position: sticky;
 }
 
+#tag-search {
+    line-height: 1;
+    border-width: 2px;
+    font-weight: 600;
+    margin: 10px;
+}
+
 .tocify {
     padding-top: 55px;
     margin-left: 1%;

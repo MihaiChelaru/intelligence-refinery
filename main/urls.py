@@ -22,6 +22,7 @@ urlpatterns = [
     path('tags/', views.tag_list, name='tag-list'),
     path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
     path('tag-autocomplete/', TagAutocomplete.as_view(), name='tag-autocomplete'),
+    path('tag-search/', views.tag_search, name='tag-search'),
     # wiki urls
     path('notifications/', include('django_nyt.urls')),
     path('wiki/', include('wiki.urls')),

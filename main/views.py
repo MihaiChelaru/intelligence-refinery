@@ -20,6 +20,7 @@ def home(request):
         request, 'main/home.html', context={}
     )
 
+
 def contact(request):
     """
     View for displaying the contact form page.
@@ -32,7 +33,7 @@ def contact(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
-            message =  f"Sent by: {name} <{email}>\n\n" + form.cleaned_data['message']
+            message = f"Sent by: {name} <{email}>\n\n" + form.cleaned_data['message']
             try:
                 send_mail(subject, message, "mailgun@mg.intelligencerefinery.io", ['intelligence.refinery@gmail.com'])
             except BadHeaderError:
@@ -40,7 +41,7 @@ def contact(request):
             return redirect('success')
     else:
         form = ContactForm()
-    return render(request, 'main/contact.html', {'form':form})
+    return render(request, 'main/contact.html', {'form': form})
 
 
 def tag_list(request):
@@ -53,6 +54,15 @@ def tag_list(request):
     tags = SiteTags.objects.all()
     return render(request, 'main/tag_list.html', {'tags': tags})
 
+
+def tag_search(request):
+    if request.method == 'POST':
+        tag_id = request.POST.get('tag')
+        slug = SiteTags.objects.get(id=tag_id).slug
+        return redirect('posts-by-tag', slug)
+    return redirect('home')
+
+
 def posts_by_tag(request, slug):
     """
     View for displaying all posts with a given tag.
@@ -62,10 +72,12 @@ def posts_by_tag(request, slug):
     """
     blog_posts = Post.objects.filter(tags=slug)
     reviews = Review.objects.filter(tags=slug)
-    return render(request, 'main/posts_by_tag.html', {'blog_posts': blog_posts, 'reviews': reviews,'slug':slug})
+    return render(request, 'main/posts_by_tag.html', {'blog_posts': blog_posts, 'reviews': reviews, 'slug': slug})
+
 
 def curriculum_vitae_view(request):
     try:
-        return FileResponse(open(os.path.join(settings.STATIC_ROOT, 'pdf/Mihai_Chelaru_CV.pdf'), 'rb'), content_type='application/pdf')
+        return FileResponse(open(os.path.join(settings.STATIC_ROOT, 'pdf/Mihai_Chelaru_CV.pdf'), 'rb'),
+                            content_type='application/pdf')
     except FileNotFoundError:
         raise Http404("Could not find PDF.")
