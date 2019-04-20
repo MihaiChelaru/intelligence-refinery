@@ -4,18 +4,19 @@ verify_ssl = true
 
 [packages]
 dj-database-url = "*"
-django = "*"
+django = "==2.1.8"
 gunicorn = "*"
-psycopg2 = "*"
 whitenoise = "*"
 django-markdownx = "*"
 django-heroku = "*"
 django-tagulous = "*"
-django-anymail = {extras = ["mailgun"], version = "*"}
+django-anymail = {extras = ["mailgun"],version = "*"}
 pillow = "*"
 wiki = "*"
 django-debug-toolbar = "*"
 django-autocomplete-light = "*"
+psycopg2-binary = "*"
+django-dotenv = "*"
 
 [requires]
 python_version = "3.6"

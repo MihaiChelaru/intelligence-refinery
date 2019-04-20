@@ -9,17 +9,18 @@ class SiteTags(tagulous.models.TagModel):
 
     @property
     def color(self):
-        '''
+        """
         :return: Returns the hue value for this particular tag for use in CSS hsl() color property.
-        '''
+        """
         hue = ((self.pk * 0.618033988749895) % 1) * 360
         return f'{hue}, 60%, 80%'
 
     def get_absolute_url(self):
-        '''
+        """
         :return: Returns the URL to the posts-by-tag page corresponding to this particular tag.
-        '''
+        """
         return reverse('posts-by-tag', kwargs={'slug': self.slug})
+
 
 # Models for blog app
 class Author(models.Model):
