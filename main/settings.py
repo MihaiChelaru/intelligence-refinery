@@ -58,18 +58,6 @@ INSTALLED_APPS = [
     'markdownx',
     'tagulous',
     'anymail',
-    # django-wiki apps
-    'django.contrib.sites.apps.SitesConfig',
-    'django.contrib.humanize.apps.HumanizeConfig',
-    'django_nyt.apps.DjangoNytConfig',
-    'mptt',
-    'sekizai',
-    'sorl.thumbnail',
-    'wiki.apps.WikiConfig',
-    'wiki.plugins.attachments.apps.AttachmentsConfig',
-    'wiki.plugins.notifications.apps.NotificationsConfig',
-    'wiki.plugins.images.apps.ImagesConfig',
-    'wiki.plugins.macros.apps.MacrosConfig',
     'debug_toolbar',
 ]
 
@@ -106,7 +94,6 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                "sekizai.context_processors.sekizai",
             ],
         },
     },
@@ -141,12 +128,6 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',
     'markdown.extensions.toc',
 ]
-
-# django-wiki settings
-
-SITE_ID = 2
-WIKI_ACCOUNT_HANDLING = False
-WIKI_ACCOUNT_SIGNUP_ALLOWED = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

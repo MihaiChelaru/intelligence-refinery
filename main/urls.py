@@ -1,9 +1,10 @@
-from blog.views import TagAutocomplete
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+
+from blog.views import TagAutocomplete
 from main import views
 
 urlpatterns = [
@@ -23,9 +24,6 @@ urlpatterns = [
     path('tags/<slug:slug>/', views.posts_by_tag, name='posts-by-tag'),
     path('tag-autocomplete/', TagAutocomplete.as_view(), name='tag-autocomplete'),
     path('tag-search/', views.tag_search, name='tag-search'),
-    # wiki urls
-    path('notifications/', include('django_nyt.urls')),
-    path('wiki/', include('wiki.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
