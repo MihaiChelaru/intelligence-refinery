@@ -20,9 +20,9 @@ django-autocomplete-light==3.3.5 \
     --hash=sha256:69a34f97a5b8ab3aac6baaea36f627ef09eaa5791c60f881b2000b1b813268d0
 django-classy-tags==0.9.0 \
     --hash=sha256:38b4546a8053499e2fef7af679a58d7c868298717d645b8b8227acba5fd4bf2b
-django-debug-toolbar==2.0 \
-    --hash=sha256:17c53cd6bf4e7d69902aedf9a1d26c5d3b7369b54c5718744704f27b5a72f35d \
-    --hash=sha256:9a23ada2e43cd989195db3c18710b5d7451134a0d48127ab64c1d2ad81700342
+django-debug-toolbar==2.2.1 \
+    --hash=sha256:7feaee934608f5cdd95432154be832fe30fda6c1249018191e2c27bc0b6a965e \
+    --hash=sha256:7aadab5240796ffe8e93cc7dfbe2f87a204054746ff7ff93cd6d4a0c3747c853
 django-dotenv==1.4.2 \
     --hash=sha256:3812bb0f4876cf31f902aad140f0645e120e51ee30eb7c40c22050f58a0e4adb \
     --hash=sha256:a9b1b40a70bd321acd231926acedb9bd2c5e873e33a1873b34a7276d196a765e
